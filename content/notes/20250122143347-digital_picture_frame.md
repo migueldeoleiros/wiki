@@ -14,20 +14,12 @@ Links: [Work]({{< relref "20250116111537-work.md" >}})
 ### Openframe {#openframe}
 
 <https://openframe.io/>
-
-
-#### Notes {#notes}
-
 It's in alpha and has been abandoned since 2020
 
 
 ### Dynaframe {#dynaframe}
 
 <https://github.com/Geektoolkit/Dynaframe3>
-
-
-#### Notes {#notes}
-
 Newer versions are [proprietary](https://www.patreon.com/Geektoolkit)
 It was builded with [Avalonia .net framework](https://avaloniaui.net/)
 
@@ -38,30 +30,18 @@ It was builded with [Avalonia .net framework](https://avaloniaui.net/)
 ### Samsung The Frame {#samsung-the-frame}
 
 <https://www.samsung.com/us/televisions-home-theater/tvs/the-frame/55-class-the-frame-qled-4k-ls03d-qn55ls03dafxza/>
-
-
-#### Notes {#notes}
-
 Literally just a TV with a matte finish
 
 
 ### Amazon Echo Show {#amazon-echo-show}
 
 <https://www.amazon.com/dp/B0CDWWS127?th=1>
-
-
-#### Notes {#notes}
-
 Literally just a TV with a matte finish x2
 
 
 ### Aura frames {#aura-frames}
 
 <https://auraframes.com/>
-
-
-#### Notes {#notes}
-
 I'm not completely sure about the underlying tech
 They provide an app where you can upload pictures
 It lacks onboard storage, it needs WIFI to work for cloud storage (concerning for such a simple product)
