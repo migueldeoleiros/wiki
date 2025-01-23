@@ -1,7 +1,7 @@
 ---
 title: "Digital Photo Frame"
 date: 2025-01-22T00:00:00+01:00
-lastmod: 2025-01-22T00:00:00+01:00
+lastmod: 2025-01-23T00:00:00+01:00
 draft: false
 ---
 
@@ -15,13 +15,22 @@ Links: [Work]({{< relref "20250116111537-work.md" >}})
 
 <https://openframe.io/>
 It's in alpha and has been abandoned since 2020
+The original creators moved on to develop [a closed source project](https://zeroframe.art/), that tries to achieve the same thing, which is a shame.
+There is a critical [issue](https://github.com/OpenframeProject/Openframe/issues/93) that prevents the project working without a rewrite of some of the code
 
 
 ### Dynaframe {#dynaframe}
 
 <https://github.com/Geektoolkit/Dynaframe3>
 Newer versions are [proprietary](https://www.patreon.com/Geektoolkit)
-It was builded with [Avalonia .net framework](https://avaloniaui.net/)
+It was built with [Avalonia .net framework](https://avaloniaui.net/)
+
+
+### tyler-tee's Digital-Photo-Frame {#tyler-tee-s-digital-photo-frame}
+
+<https://github.com/tyler-tee/Digital-Photo-Frame>
+Serie of scripts to display pictures from google photos
+Here is a [tutorial](https://www.lambdasandlapdogs.com/blog/diy-photo-frame-pictures-powered-by-pi)
 
 
 ## Hardware {#hardware}
