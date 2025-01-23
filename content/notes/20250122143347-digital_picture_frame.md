@@ -33,6 +33,11 @@ Serie of scripts to display pictures from google photos
 Here is a [tutorial](https://www.lambdasandlapdogs.com/blog/diy-photo-frame-pictures-powered-by-pi)
 
 
+### Other software {#other-software}
+
+Most tutorials out there for a a digital photo frame use an image visualizer like **feh** and a serie of scripts to download pictures form sources like google images.
+
+
 ## Hardware {#hardware}
 
 
