@@ -1,7 +1,8 @@
 ---
 title: "Generative AI picture display"
+author: ["miguel"]
 date: 2025-01-22T00:00:00+01:00
-lastmod: 2025-01-23T00:00:00+01:00
+lastmod: 2025-01-26T00:00:00+01:00
 draft: false
 ---
 
@@ -18,3 +19,19 @@ Links: [Work]({{< relref "20250116111537-work.md" >}})
 
 
 ### [Smart Mirror]({{< relref "20250122140748-smart_mirror.md" >}}) {#smart-mirror--20250122140748-smart-mirror-dot-md}
+
+
+## Planning {#planning}
+
+The plan is to develop a scalable software that allows for a small computer (like a Raspberry Pi nano) to run a client, that displays AI generated pictures.
+The client should be able to receive voice commands that will process to generate a new picture.
+To make it as flexible as possible, the client should run on a standard browser.
+The server side should be able to run on a separate computer to allow a local AI model to generate the images.
+
+A first draft of the possible architecture:
+![](/ox-hugo/ai_photo_frame_diagram1.png)
+
+We concluded that we want to avoid physical button, and use voice commands locally to control de generation of images, for that, a software like [whisper](https://github.com/openai/whisper) could translate the audio to text.
+To control when the voice controls are activated, instead of a physical button, a wake word could be used (check this [discussion on github](https://github.com/ggerganov/whisper.cpp/discussions/190)), and [Voice Acticity Detection](https://github.com/gumblex/whisper_vad) (VAD) is also important to know when the command ends.
+More complex configuration, like setting the desired server provider and changing modes can be left to an app (or webapp)
+![](/ox-hugo/ai_photo_frame_diagram2.png)
