@@ -1,12 +1,9 @@
 ---
 title: "Digital Photo Frame"
 date: 2025-01-22T00:00:00+01:00
-lastmod: 2025-01-23T00:00:00+01:00
+lastmod: 2025-01-27T00:00:00+01:00
 draft: false
 ---
-
-Links: [Work]({{< relref "20250116111537-work.md" >}})
-
 
 ## Software {#software}
 

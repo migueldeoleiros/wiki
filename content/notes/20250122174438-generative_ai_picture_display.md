@@ -5,7 +5,7 @@ lastmod: 2025-01-27T00:00:00+01:00
 draft: false
 ---
 
-Links: [Work]({{< relref "20250116111537-work.md" >}})
+Links: [Merlín Sofware]({{< relref "20250116111537-work.md" >}})
 
 
 ## Related notes {#related-notes}
