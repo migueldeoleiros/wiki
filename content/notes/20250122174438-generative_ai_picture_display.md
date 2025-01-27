@@ -30,7 +30,7 @@ The server side should be able to run on a separate computer to allow a local AI
 A first draft of the possible architecture:
 ![](/ox-hugo/ai_photo_frame_diagram1.png)
 
-We concluded that we want to avoid physical button, and use voice commands locally to control de generation of images, for that, a software like [whisper](https://github.com/openai/whisper) could translate the audio to text.
+We concluded that we want to avoid physical button, and use voice commands locally to control de generation of images, for that, a software like [Whisper]({{< relref "20250127084445-ai_speech_to_text#whisper" >}}) could translate the audio to text.
 To control when the voice controls are activated, instead of a physical button, a wake word could be used (check this [discussion on github](https://github.com/ggerganov/whisper.cpp/discussions/190)), and [Voice Acticity Detection](https://github.com/gumblex/whisper_vad) (VAD) is also important to know when the command ends.
 More complex configuration, like setting the desired server provider and changing modes can be left to an app (or webapp)
 ![](/ox-hugo/ai_photo_frame_diagram2.png)
