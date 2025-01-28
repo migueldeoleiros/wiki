@@ -1,7 +1,8 @@
 ---
 title: "Generative AI picture display"
+author: ["miguel"]
 date: 2025-01-22T00:00:00+01:00
-lastmod: 2025-01-27T00:00:00+01:00
+lastmod: 2025-01-28T00:00:00+01:00
 draft: false
 ---
 
@@ -33,4 +34,4 @@ A first draft of the possible architecture:
 We concluded that we want to avoid physical button, and use voice commands locally to control de generation of images, for that, a software like [Whisper]({{< relref "20250127084445-ai_speech_to_text#whisper" >}}) could translate the audio to text.
 To control when the voice controls are activated, instead of a physical button, a wake word could be used (check this [discussion on github](https://github.com/ggerganov/whisper.cpp/discussions/190)), and [Voice Acticity Detection](https://github.com/gumblex/whisper_vad) (VAD) is also important to know when the command ends.
 More complex configuration, like setting the desired server provider and changing modes can be left to an app (or webapp)
-![](/ox-hugo/ai_photo_frame_diagram2.png)
+![](/ox-hugo/ai_photo_frame_diagram3.png)
