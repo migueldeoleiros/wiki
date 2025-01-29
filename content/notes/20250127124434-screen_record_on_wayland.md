@@ -1,7 +1,8 @@
 ---
 title: "Screen record on Wayland"
 date: 2025-01-27T00:00:00+01:00
-lastmod: 2025-01-27T00:00:00+01:00
+lastmod: 2025-01-29T00:00:00+01:00
+tags: ["tools"]
 draft: false
 ---
 
