@@ -1,8 +1,8 @@
 ---
 title: "local emacs configuration per directory"
-author: ["miguel"]
 date: 2025-01-17T00:00:00+01:00
-lastmod: 2025-01-17T00:00:00+01:00
+lastmod: 2025-01-29T00:00:00+01:00
+tags: ["emacs"]
 draft: false
 ---
 
