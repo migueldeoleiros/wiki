@@ -64,7 +64,7 @@ Documentation only changes
 
 ### style {#style}
 
-Changes taht do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
 
 
 ### perf {#perf}
