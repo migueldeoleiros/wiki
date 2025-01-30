@@ -1,3 +1,17 @@
 @use "./base.scss";
 
 // put your custom CSS here!
+
+h2 { // add thin separator under second level headers
+  position: relative;
+  padding-bottom: 0.5rem;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 80%;
+    height: 1px;
+    background-color: var(--lightgray);
+    margin-top: 0.5rem;
+  }
+}
