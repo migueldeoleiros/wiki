@@ -35,8 +35,6 @@ Links: [University]({{< relref "20240621135740-university.md" >}})
 
 ### Datos da empresa {#datos-da-empresa}
 
-|                      |                        |
-|----------------------|------------------------|
 | Nombre de la empresa | Merlín Software        |
 | Departamento         | Desarrollo de Software |
 | Actividades          | consultora tecnológica |
@@ -47,15 +45,12 @@ Links: [University]({{< relref "20240621135740-university.md" >}})
 ### Datos da práctica {#datos-da-práctica}
 
 | Nombre tutor académico | Nieves Pedreira Souto                                                |
-|------------------------|----------------------------------------------------------------------|
 | Departamento           | Departamento de Ciencias da Computación e Tecnoloxías da Información |
 
 | Nombre tutor profesional | Martín Álvarez Castillo |
-|--------------------------|-------------------------|
 | Cargo                    | CTO                     |
 
 | Fechas           | Del 7 de febrero al 9 de mayo |
-|------------------|-------------------------------|
 | Ayuda al estudio | 1000€                         |
 
 
@@ -243,8 +238,6 @@ En general, creo que las actividades realizadas durante mis prácticas externas 
 
 ### Referencias {#referencias}
 
-|                  |                                                    |
-|------------------|----------------------------------------------------|
 | Epic react       | <https://epicreact.dev/>                           |
 | code with andrea | <https://courses.codewithandrea.com/>              |
 | flutter docs     | <https://docs.flutter.dev>                         |
