@@ -72,11 +72,11 @@ Links: [University]({{< relref "20240621135740-university.md" >}})
 
 ### Herramientas y tecnologías usadas {#herramientas-y-tecnologías-usadas}
 
--   Flutter: Framework de desarrollo de aplicaciones multiplataforma
+-   [Flutter]({{< relref "20250130142109-flutter.md" >}}): Framework de desarrollo de aplicaciones multiplataforma
 -   Dart: Lenguaje de programación utilizado en Flutter.
 -   GoRouter: Librería de Flutter para el manejo de la navegación entre páginas.
 -   Riverpod: Librería de Flutter para el manejo de estado.
--   Git: Sistema de control de versiones.
+-   [Git]({{< relref "20250128165929-git.md" >}}): Sistema de control de versiones.
 -   Vscode: Editor de código.
 -   Gitea: Plataforma de alojamiento de código.
 -   Penpot: Programa para diseño de mockups

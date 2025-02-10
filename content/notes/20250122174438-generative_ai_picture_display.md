@@ -1,7 +1,7 @@
 ---
 title: "Generative AI picture display"
 date: 2025-01-22T00:00:00+01:00
-lastmod: 2025-01-30T00:00:00+01:00
+lastmod: 2025-02-10T00:00:00+01:00
 tags: ["projects", "ai"]
 draft: false
 ---
