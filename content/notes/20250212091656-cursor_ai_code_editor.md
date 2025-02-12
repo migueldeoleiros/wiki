@@ -40,7 +40,8 @@ For general rules that you want to have in all chats and projects, things like "
 
 ### Models {#models}
 
-Adviced to use `claude-3.5-sonnet` specially for composer, `gpt-4o-mini` works well for chat, to save claude credits.
+Adviced to use `claude-3.5-sonnet` specially for composer.
+`gpt-4o-mini` works well for chat, to save claude credits (not relevant with full license)
 
 
 ### Add your docs {#add-your-docs}
@@ -116,7 +117,7 @@ Save your claude credits for the composer and use gpt-4o-mini with chat.
 
 source: <https://x.com/ryancarson/status/1877170052492824683>
 
--   Start with o1 and explain all the things I’d like the feature to do.
+-   Start with o1(chatGPT on web not cursor) and explain all the things I’d like the feature to do.
 -   Ask o1 to ask me clarifying questions on the functionality.
 -   Ask o1 to break it down into atomic steps for a junior dev. I say “Do not write any code. If necessary though you can use pseudocode.
 -   Copy that into a instructions.md in Cursor. I ask Cursor Agent to read the file and ask any clarifying questions before beginning.
