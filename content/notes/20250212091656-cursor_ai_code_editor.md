@@ -41,7 +41,7 @@ For general rules that you want to have in all chats and projects, things like "
 ### Models {#models}
 
 Adviced to use `claude-3.5-sonnet` specially for composer.
-`gpt-4o-mini` works well for chat, to save claude credits (not relevant with full license)
+`gpt-4o-mini` works well for chat, to save claude credits (not relevant with license)
 
 
 ### Add your docs {#add-your-docs}
