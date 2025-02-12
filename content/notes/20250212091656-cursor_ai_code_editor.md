@@ -2,7 +2,7 @@
 title: "Cursor AI code editor"
 date: 2025-02-12T00:00:00+01:00
 lastmod: 2025-02-12T00:00:00+01:00
-tags: ["tech", "tools"]
+tags: ["tools"]
 draft: false
 ---
 
