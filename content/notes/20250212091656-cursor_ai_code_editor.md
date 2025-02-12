@@ -19,14 +19,14 @@ AI-powered code editor designed to enhance coding efficiency and productivity. I
 -   **AI Code Completion**: Cursor AI offers intelligent autocompletion that predicts and completes entire code blocks, not just single lines. It analyzes the context of your project to suggest relevant edits.
 -   **Smart Code Improvements**: The editor can refactor and optimize code by converting loops to list comprehensions, simplifying conditionals, and removing unused variables.
 -   **Plain Language Commands**: Can generate code using natural language instructions. For example, typing "Create a function to calculate the Fibonacci sequence" can result in a fully generated function.
--   **In-COntext Help and Debugging**: Provides real-time explanations and documentation as you code. It also assists in debugging by highlighting issues and suggesting fixes.
+-   **In-Context Help and Debugging**: Provides real-time explanations and documentation as you code. It also assists in debugging by highlighting issues and suggesting fixes.
 -   **Codebase Understanding**: Can comprehend and provide insights into the entire codebase, allowing developers to query the codebase in natural language5.
 -   **Extension Compatibility**: As a fork of VS Code, Cursor supports existing extensions and settings, ensuring a seamless integration into developers' workflows. (importing all configurations on startup can result in unexpected consequences)
 
 
 ## Installation {#installation}
 
-Provides binaries for Windows and MacOS, for linux AppImage, can also be installed through the AUR in Arch with the `cursor-bin` package.
+Provides binaries for Windows and MacOS, for Linux AppImage, can also be installed through the AUR in Arch with the `cursor-bin` package.
 
 
 ## Cursor Settings {#cursor-settings}
@@ -81,7 +81,7 @@ In this file you'll explain in plain text the following:
 -   tech stack &amp; packages
 -   project folder structure
 -   database design
--   visual desing if working with frontend
+-   visual design if working with frontend
 
 When working with a new project like a webpage, consider adding screenshots of similar projects as reference
 
