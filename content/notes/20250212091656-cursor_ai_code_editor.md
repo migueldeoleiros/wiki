@@ -11,7 +11,7 @@ source: <https://www.cursor.com>
 
 ## Introduction {#introduction}
 
-AI-powered code editor designed to enhance coding efficiency and productivity. It is built on the foundation of Visual Studio Code, retaining its familiar features while introducing innovative AI-driven functionalities.
+Cursor is an AI-powered code editor designed to enhance coding efficiency and productivity. It is built on the foundation of Visual Studio Code, retaining its familiar features while introducing innovative AI-driven functionalities.
 
 
 ### Key Features {#key-features}
@@ -40,7 +40,7 @@ For general rules that you want to have in all chats and projects, things like "
 
 ### Models {#models}
 
-Use `claude-3.5-sonnet` specially for composer, `gpt-4o-mini` works well for chat, to save claude credits.
+Adviced to use `claude-3.5-sonnet` specially for composer, `gpt-4o-mini` works well for chat, to save claude credits.
 
 
 ### Add your docs {#add-your-docs}
