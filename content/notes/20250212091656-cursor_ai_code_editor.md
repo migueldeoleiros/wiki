@@ -106,7 +106,7 @@ Save your claude credits for the composer and use gpt-4o-mini with chat.
 
 -   Avoid adding too many files to the context, usually no more that 2, the more files you add the faster the context will run out and it will start hallucinating. Add snippets instead of whole files to avoid this issue.
 
--   You can pin files to the contest to avoid adding them every time
+-   You can pin files to the context to avoid adding them every time
 
 -   Some times is more productive to add stubs and comments on what you want the AI to generate, this works well with the selection feature, that takes your selection as context.
 
