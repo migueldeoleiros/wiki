@@ -1,7 +1,7 @@
 ---
 title: "Generative AI picture display"
 date: 2025-01-22T00:00:00+01:00
-lastmod: 2025-02-12T00:00:00+01:00
+lastmod: 2025-02-13T00:00:00+01:00
 tags: ["projects", "ai"]
 draft: false
 ---
@@ -43,18 +43,18 @@ The carousel mode is going to have a timer associated that could be configured b
 The project divides into 3 codebases.
 
 
-#### frame_server {#frame-server}
+#### [frame_server](https://github.com/merlinsoftwaresl/frame_server) {#frame-server}
 
 The server side written in python, it comunicates with the client through a WebSocket to provide images as requested.
 
 
-#### frame_client {#frame-client}
+#### [frame_client](https://github.com/merlinsoftwaresl/frame_client) {#frame-client}
 
 The client written in Flutter, it sends requests to the server for images and displays them in screen.
 Shows a QR on startup to allow for connection with the app.
 
 
-#### frame_app {#frame-app}
+#### [frame_app](https://github.com/merlinsoftwaresl/frame_app) {#frame-app}
 
 The control app written in Flutter, it runs on a phone.
 Connects to the client through an API REST and sends config options like speed of requests and server ip
