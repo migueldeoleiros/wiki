@@ -22,3 +22,53 @@ This application mirrors Android devices (video and audio) connected via USB or 
 
 **There are lots of shortcuts on the official docs**
 source: <https://github.com/Genymobile/scrcpy/blob/master/doc/shortcuts.md>
+
+
+### usage {#usage}
+
+Documentation on [Github](https://github.com/Genymobile/scrcpy) is quite extensive and detailed, this are some of the main usage examples that they provide.
+Other than sharing the screen you can control the whole phone and integrate this with scripts if needed.
+
+
+#### Capture the screen in H.265 (better quality), limit the size to 1920, limit the frame rate to 60fps, disable audio, and control the device by simulating a physical keyboard: {#capture-the-screen-in-h-dot-265--better-quality--limit-the-size-to-1920-limit-the-frame-rate-to-60fps-disable-audio-and-control-the-device-by-simulating-a-physical-keyboard}
+
+```shell
+scrcpy --video-codec=h265 --max-size=1920 --max-fps=60 --no-audio --keyboard=uhid
+scrcpy --video-codec=h265 -m1920 --max-fps=60 --no-audio -K  # short version
+```
+
+
+#### Start VLC in a new virtual display (separate from the device display): {#start-vlc-in-a-new-virtual-display--separate-from-the-device-display}
+
+```shell
+scrcpy --new-display=1920x1080 --start-app=org.videolan.vlc
+```
+
+
+#### Record the device camera in H.265 at 1920x1080 (and microphone) to an MP4 file: {#record-the-device-camera-in-h-dot-265-at-1920x1080--and-microphone--to-an-mp4-file}
+
+```shell
+scrcpy --video-source=camera --video-codec=h265 --camera-size=1920x1080 --record=file.mp4
+```
+
+
+#### Capture the device front camera and expose it as a webcam on the computer (on Linux): {#capture-the-device-front-camera-and-expose-it-as-a-webcam-on-the-computer--on-linux}
+
+```shell
+scrcpy --video-source=camera --camera-size=1920x1080 --camera-facing=front --v4l2-sink=/dev/video2 --no-playback
+```
+
+
+#### Control the device without mirroring by simulating a physical keyboard and mouse (USB debugging not required): {#control-the-device-without-mirroring-by-simulating-a-physical-keyboard-and-mouse--usb-debugging-not-required}
+
+```shell
+scrcpy --otg
+```
+
+
+#### Control the device using gamepad controllers plugged into the computer: {#control-the-device-using-gamepad-controllers-plugged-into-the-computer}
+
+```shell
+scrcpy --gamepad=uhid
+scrcpy -G  # short version
+```
