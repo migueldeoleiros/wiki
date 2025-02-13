@@ -27,11 +27,16 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.Explorer(),
+    Component.TableOfContents(),    
+    Component.RecentNotes({
+      title: "Recent notes",
+      limit: 8,
+      linkToMore: "notes"
+    }), 
   ],
   right: [
     Component.Graph(),
-    Component.DesktopOnly(Component.TableOfContents()),
+    Component.DesktopOnly(Component.Explorer()),
     Component.Backlinks(),
   ],
 }
