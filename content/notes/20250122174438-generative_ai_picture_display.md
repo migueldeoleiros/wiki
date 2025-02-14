@@ -1,8 +1,8 @@
 ---
 title: "Generative AI picture display"
 date: 2025-01-22T00:00:00+01:00
-lastmod: 2025-01-29T00:00:00+01:00
-tags: ["projects"]
+lastmod: 2025-02-13T00:00:00+01:00
+tags: ["projects", "ai"]
 draft: false
 ---
 
@@ -39,3 +39,23 @@ More complex configuration, like setting the desired server provider and changin
 There are two modes for the client, one that requests AI images from voice commands, and one that request a random image.
 The carousel mode is going to have a timer associated that could be configured beforehand, and will request images every so often.
 ![](/ox-hugo/ai_photo_frame_sequence1.png)
+
+The project divides into 3 codebases.
+
+
+#### [frame_server](https://github.com/merlinsoftwaresl/frame_server) {#frame-server}
+
+The server side written in python, it comunicates with the client through a WebSocket to provide images as requested.
+
+
+#### [frame_client](https://github.com/merlinsoftwaresl/frame_client) {#frame-client}
+
+The client written in Flutter, it sends requests to the server for images and displays them in screen.
+Shows a QR on startup to allow for connection with the app.
+
+
+#### [frame_app](https://github.com/merlinsoftwaresl/frame_app) {#frame-app}
+
+The control app written in Flutter, it runs on a phone.
+Connects to the client through an API REST and sends config options like speed of requests and server ip
+Includes a QR reader for directo comunication with the client, and initial connection

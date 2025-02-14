@@ -1,7 +1,7 @@
 ---
 title: "Conventional Commits"
 date: 2025-01-27T00:00:00+01:00
-lastmod: 2025-01-29T00:00:00+01:00
+lastmod: 2025-01-30T00:00:00+01:00
 draft: false
 ---
 
@@ -26,18 +26,64 @@ The commit message should be structured as follows:
 
 ## Types {#types}
 
--   **fix** (patches a bug in the codebase)
--   **feat** (introduces a new feature)
--   **build**
--   **chore**
--   **ci**
--   **docs**
--   **style**
--   **refactor**
--   **perf**
--   **test**
+
+### feat {#feat}
+
+Introduces a new feature
+
+
+### fix {#fix}
+
+Patches a bug in the codebase
+
+
+### refactor {#refactor}
+
+A code change that neither fixes a bug nor adds a feature
+
+
+### build {#build}
+
+Changes that affect the build system or external dependencies
+
+
+### chore {#chore}
+
+Involves maintenance tasks or changes that don't directly modify the source code or test files
+
+
+### ci {#ci}
+
+Changes in CI configuration files and scripts
+
+
+### docs {#docs}
+
+Documentation only changes
+
+
+### style {#style}
+
+Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+
+
+### perf {#perf}
+
+A code change that improves performance
+
+
+### test {#test}
+
+Adding missing tests or correcting existing tests
 
 
 ## Footers {#footers}
 
-**BREAKING CHANGE:**
+
+### BREAKING CHANGE {#breaking-change}
+
+This footer should be added when a breaking change is introduced, following the next format:
+
+```txt
+BREAKING CHANGE: <description>
+```
