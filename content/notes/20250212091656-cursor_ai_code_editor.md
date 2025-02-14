@@ -1,7 +1,7 @@
 ---
 title: "Cursor AI code editor"
 date: 2025-02-12T00:00:00+01:00
-lastmod: 2025-02-12T00:00:00+01:00
+lastmod: 2025-02-14T00:00:00+01:00
 tags: ["tools"]
 draft: false
 ---
@@ -111,6 +111,8 @@ Save your claude credits for the composer and use gpt-4o-mini with chat.
 -   Some times is more productive to add stubs and comments on what you want the AI to generate, this works well with the selection feature, that takes your selection as context.
 
 -   When stuck with unhelpful answers open a new chat, take a look if the instructions file if it’s up to date, change the model and play with the way you formulate the questions and the context files.
+
+-   If you add a file to the .gitignore cursor won't add it to the context, this is relevant for `instructions.md` for example.
 
 
 ## Step by Step walkthrough {#step-by-step-walkthrough}
