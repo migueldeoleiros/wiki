@@ -30,7 +30,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.TableOfContents(),    
     Component.RecentNotes({
       title: "Recent notes",
-      limit: 8,
+      limit: 5,
       linkToMore: "notes"
     }), 
   ],
