@@ -42,7 +42,7 @@ The configuration is pretty straight forward:
 
 I opted to just add the config file, since it's the most versatile
 
-`aider-transient-menu` will open a nice meny with a bunch of option for comunicating with the AI.
+`aider-transient-menu` will open a nice many with a bunch of option for communicating with the AI.
 I found the explain function at `C-c a e` pretty useful for understanding foreign codebases.
 
 Syntax highlighting in the aider buffer is not great at the moment, but it something that they seem to be actively working on.
@@ -76,7 +76,8 @@ And login to Copilot with `copilot-login`. You can also check the status with `c
 To add the missing features from [copilot.el](https://github.com/copilot-emacs/copilot.el) other than the completion, we got this other package.
 It's features are somewhat similar to the [aider.el](https://github.com/tninja/aider.el), but doesn't have insert capabilities.
 It also has a transient menu with `copilot-chat-transient` which is very nice.
-It provides a couple of frontends for syntax highlighting wich is a bit nicer than the aider solution. I has some issue with the default `org-mode` backend, probably because some of my configurations for org. `shell-maker` seems to be the more user friendly option, but less powerful.
+It provides a couple of frontends for syntax highlighting which is a bit nicer than the aider solution.
+`shell-maker` seems to be the more user friendly option, but whit `org-mode` you can also eval regions, and it's easier to integrate with my note taking workflow.
 
 Of course you'll need a copilot license for this too, and it will use the microsoft models.
 Installation is also fairly simple:
@@ -86,7 +87,7 @@ Installation is also fairly simple:
   :straight (:host github :repo "chep/copilot-chat.el" :files ("*.el"))
   :ensure t
   :config
-  (setq copilot-chat-frontend 'shell-maker)
+  (setq copilot-chat-frontend 'org)
   :after (request org markdown-mode))
 ```
 
@@ -97,4 +98,4 @@ _Compilation takes a bit of time, so don't panic_
 
 This seems to be a more general solution for AI use, but it also add some code specific features.
 The configuration is a bit more complex, but it's well explained in their [GitHub](https://github.com/s-kostyaev/ellama?tab=readme-ov-file#installation).
-I can't comment on it since I haven't tried it extensively, but it's probably the best option if you selfhost some AI model.
+I can't comment on it since I haven't tried it extensively, but it's probably the best option if you self-host some AI model.
