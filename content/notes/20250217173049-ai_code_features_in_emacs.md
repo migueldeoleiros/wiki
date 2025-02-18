@@ -47,7 +47,7 @@ I found the explain function at `C-c a e` pretty useful for understanding foreig
 
 Syntax highlighting in the aider buffer is not great at the moment, but it something that they seem to be actively working on.
 
-A downside in my opinion is the littering you get in your different repos, it creates a history file and a config file in each one. It prompts you to add them to the `.gitignore`, which makes it a bit more tolerable.
+A downside in my opinion is the littering you get in your different repos, it creates a history file and cache in each one. It prompts you to add them to the `.gitignore`, which makes it a bit more tolerable.
 
 
 ## [copilot.el](https://github.com/copilot-emacs/copilot.el) {#copilot-dot-el}
@@ -60,7 +60,11 @@ Set up is also fairly simple:
 ```emacs-lisp
 (use-package copilot
   :straight (:host github :repo "copilot-emacs/copilot.el" :files ("*.el"))
-  :ensure t)
+  :ensure t
+  :bind (:map copilot-completion-map
+              ("<tab>" . copilot-accept-completion)
+                ("TAB" . copilot-accept-completion))
+)
 ```
 
 Then install the copilot server with `copilot-install-server`
@@ -72,7 +76,7 @@ And login to Copilot with `copilot-login`. You can also check the status with `c
 To add the missing features from [copilot.el](https://github.com/copilot-emacs/copilot.el) other than the completion, we got this other package.
 It's features are somewhat similar to the [aider.el](https://github.com/tninja/aider.el), but doesn't have insert capabilities.
 It also has a transient menu with `copilot-chat-transient` which is very nice.
-It uses markdown for syntax highlighting wich is a bit nicer than the aider solution.
+It provides a couple of frontends for syntax highlighting wich is a bit nicer than the aider solution. I has some issue with the default `org-mode` backend, probably because some of my configurations for org. `shell-maker` seems to be the more user friendly option, but less powerful.
 
 Of course you'll need a copilot license for this too, and it will use the microsoft models.
 Installation is also fairly simple:
@@ -81,8 +85,12 @@ Installation is also fairly simple:
 (use-package copilot-chat
   :straight (:host github :repo "chep/copilot-chat.el" :files ("*.el"))
   :ensure t
+  :config
+  (setq copilot-chat-frontend 'shell-maker)
   :after (request org markdown-mode))
 ```
+
+_Compilation takes a bit of time, so don't panic_
 
 
 ## [ellama](https://github.com/s-kostyaev/ellama) {#ellama}
