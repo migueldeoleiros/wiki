@@ -1,7 +1,7 @@
 ---
 title: "Generative AI picture display"
 date: 2025-01-22T00:00:00+01:00
-lastmod: 2025-02-13T00:00:00+01:00
+lastmod: 2025-02-17T00:00:00+01:00
 tags: ["projects", "ai"]
 draft: false
 ---
@@ -58,4 +58,4 @@ Shows a QR on startup to allow for connection with the app.
 
 The control app written in Flutter, it runs on a phone.
 Connects to the client through an API REST and sends config options like speed of requests and server ip
-Includes a QR reader for directo comunication with the client, and initial connection
+Includes a QR reader for direct communication with the client, and initial connection
