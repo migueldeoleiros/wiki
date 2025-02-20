@@ -1,7 +1,7 @@
 ---
 title: "Generative AI picture display"
 date: 2025-01-22T00:00:00+01:00
-lastmod: 2025-02-19T00:00:00+01:00
+lastmod: 2025-02-20T00:00:00+01:00
 tags: ["projects", "ai"]
 draft: false
 ---
@@ -45,7 +45,7 @@ The project divides into 3 codebases.
 
 #### [frame_server](https://github.com/merlinsoftwaresl/frame_server) {#frame-server}
 
-The server side written in python, it comunicates with the client through a WebSocket to provide images as requested.
+The server side written in python, it provides a REST API for comunication with the client and send images.
 
 
 #### [frame_client](https://github.com/merlinsoftwaresl/frame_client) {#frame-client}
