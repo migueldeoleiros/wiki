@@ -1,7 +1,7 @@
 ---
 title: "Cursor AI code editor"
 date: 2025-02-12T00:00:00+01:00
-lastmod: 2025-02-14T00:00:00+01:00
+lastmod: 2025-02-25T00:00:00+01:00
 tags: ["tools"]
 draft: false
 ---
@@ -40,7 +40,7 @@ For general rules that you want to have in all chats and projects, things like "
 
 ### Models {#models}
 
-Adviced to use `claude-3.5-sonnet` specially for composer.
+Adviced to use `claude-3.7-sonnet` specially for composer.
 `gpt-4o-mini` works well for chat, to save claude credits (not relevant with license)
 
 
@@ -89,11 +89,15 @@ When working with a new project like a webpage, consider adding screenshots of s
 Documentation was already important before AI was a thing, having proper documentation can help both the AI, your teammates and yourself in the future, so it's always worth it.
 
 
-## Chat vs Composer {#chat-vs-composer}
+## When to use composer modes {#when-to-use-composer-modes}
 
-Use chat for smaller tasks and for explaining code/commands. Use it to ask questions and navigate your codebase.
-Use composer for writing the code, tag your `instructions.md` inside the composer always and tell him to update it as the project progresses.
-Only ask composer to do one task at a time. Make it make the changes step by step, if you ask to it to edit multiple files it will hallucinate and you will lose control.
+-   **Ask**: get answers about your codebase, just as with chat
+-   **Edit**: makes changes to the current files, no tool access
+-   **Agent**: access to tools, mcp and internet to make cross file changes
+
+Use `Ask` for smaller tasks and for explaining code/commands. Use it to ask questions and navigate your codebase.
+Use `Edit` or `Agent` for writing the code, tag your `instructions.md` inside the composer always and tell him to update it as the project progresses.
+Only ask `Edit` and `Agent` to do one task at a time. Make it make the changes step by step, if you ask to it to edit multiple files it will hallucinate and you will lose control.
 
 Always verify the code is clean before approving the change.
 
