@@ -1,7 +1,7 @@
 ---
 title: "Network cli tools"
 date: 2025-01-30T00:00:00+01:00
-lastmod: 2025-01-30T00:00:00+01:00
+lastmod: 2025-02-25T00:00:00+01:00
 tags: ["tools"]
 draft: false
 ---
@@ -15,6 +15,13 @@ Send ARP packets to hosts (specified as IP addresses or hostnames) to scan the l
 
 -   Scan an IP network with a custom bitmask
     `arp-scan 192.168.1.1/24`
+
+
+## avahi-browse {#avahi-browse}
+
+Check for mDNS devices in the network
+`avahi-browse -ar`
+`avahi-browse -at`
 
 
 ## ping {#ping}
