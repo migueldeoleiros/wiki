@@ -1,11 +1,11 @@
 ---
-title: "Vim Introduction"
+title: "Vim introduction, from basic to advance"
 date: 2022-04-17T00:00:00+02:00
 lastmod: 2025-03-07T00:00:00+01:00
 draft: false
 ---
 
-Links :: [GPUL]({{< relref "20240622201912-gpul.md" >}}), [Personal Blog]({{< relref "20240622202252-personal_blog.md" >}})
+Links: [GPUL]({{< relref "20240622201912-gpul.md" >}}), [Personal Blog]({{< relref "20240622202252-personal_blog.md" >}})
 
 
 ## What is Vim? {#what-is-vim}
