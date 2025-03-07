@@ -137,16 +137,17 @@ To get into _Command Mode_ press **:**, you'll notice that you can now write in 
 
 This are the commands that you'll want to use more often:
 
-| :help d | show help for command "d"               |
-|---------|-----------------------------------------|
-| :w      | write file                              |
-| :w foo  | write on file called "foo"              |
-| :q      | quit vim                                |
-| :q!     | quit vim without saving                 |
-| :wq     | write file and quit vim                 |
-| :e foo  | open file called "foo"                  |
-| :!ls    | execute ls command on system shell      |
-| :r !ls  | read output of ls command and insert it |
+| command   | description                             |
+|-----------|-----------------------------------------|
+| `:help d` | show help for command "d"               |
+| `:w`      | write file                              |
+| `:w foo`  | write on file called "foo"              |
+| `:q`      | quit vim                                |
+| `:q!`     | quit vim without saving                 |
+| `:wq`     | write file and quit vim                 |
+| `:e foo`  | open file called "foo"                  |
+| `:!ls`    | execute ls command on system shell      |
+| `:r !ls`  | read output of ls command and insert it |
 
 
 ## VIM grammar {#vim-grammar}
@@ -158,31 +159,34 @@ To understand this, we'll divide Vim commands in 3 groups: Verbs, Modifiers and 
 
 ### Verbs {#verbs}
 
-| **x** | delete character under cursor  |
-|-------|--------------------------------|
-| **r** | replace character under cursor |
-| **c** | change                         |
-| **y** | yank (copy)                    |
-| **d** | delete                         |
-| **p** | paste                          |
-| **v** | visually select                |
+| command | description                    |
+|---------|--------------------------------|
+| **x**   | delete character under cursor  |
+| **r**   | replace character under cursor |
+| **c**   | change                         |
+| **y**   | yank (copy)                    |
+| **d**   | delete                         |
+| **p**   | paste                          |
+| **v**   | visually select                |
 
 
 ### Modifiers {#modifiers}
 
-| **i** | inside                                             |
-|-------|----------------------------------------------------|
-| **a** | around                                             |
-| NUM   | any number (0,1,2..)                               |
-| **t** | searches for something and stops before it (to --) |
-| **f** | searches for something and lands on it (find)      |
-| **/** | find a string                                      |
+| command | description                                        |
+|---------|----------------------------------------------------|
+| **i**   | inside                                             |
+| **a**   | around                                             |
+| NUM     | any number (0,1,2..)                               |
+| **t**   | searches for something and stops before it (to --) |
+| **f**   | searches for something and lands on it (find)      |
+| **/**   | find a string                                      |
 
 
 ### Noun {#noun}
 
-| **w**       | start of next word              |
+| command     | description                     |
 |-------------|---------------------------------|
+| **w**       | start of next word              |
 | **b**       | start of previous word (before) |
 | **e**       | end of word                     |
 | **s**       | sentence                        |
@@ -200,12 +204,14 @@ Now that we know the parts to form a sentence let's make our first basic ones. Y
 any command to repeat it set number of times. For example **2w** will move the cursor two words instead of one.
 Now with a verb, **d2w** will delete the current and next word. I'm sure you are getting how this works, here you have some other examples:
 
--   **vap** Visually select this paragraph (_visual around paragraph_)
--   **ci"** Change text inside quotes
--   **ca"** Change text around quotes (includes quotes)
--   **dt,** Delete text until the next coma on the current line
--   **dj** Delete this and the line below
--   **d/something** Delete text until the next search that matches "something"
+| command         | description                                                |
+|-----------------|------------------------------------------------------------|
+| **vap**         | Visually select this paragraph (_visual around paragraph_) |
+| **ci"**         | Change text inside quotes                                  |
+| **ca"**         | Change text around quotes (includes quotes)                |
+| **dt,**         | Delete text until the next coma on the current line        |
+| **dj**          | Delete this and the line below                             |
+| **d/something** | Delete text until the next search that matches "something" |
 
 
 ## The "dot" or repeat command {#the-dot-or-repeat-command}
@@ -231,13 +237,13 @@ macro with **@@** as **.@** would only repeat the last command inside the macro.
 A very common example where I like to use macros is when editing a list of items, let's make a simple one to add ";" at the end of each line.
 
 We are gonna use the register "a" but you could save this anywhere, so to start **qa** now to append ";" to the end of the
-line we could do **$a;&lt;ESC&gt;** but we can shorten **$a** as just **A** (for adding something at the beginning you could also
+line we could do `$a;<ESC>` but we can shorten **$a** as just **A** (for adding something at the beginning you could also
 use **I** instead of **0i**). Now we want to be on the next line to make it easier to execute the macro again, so **j** and lastly
-**q** to finish the macro. Adding all this together it would be **qaA;&lt;ESC&gt;jq**
+**q** to finish the macro. Adding all this together it would be `qaA;<ESC>jq`
 And to execute this you could do **@a**, maybe you have 10 lines to add a semicolon, so you could got to the first one and do **10@a**.
 
 If you wanted to repeat this with every line in a file the fastest way to do that is with recursion, in this case with
-**qaA;&lt;ESC&gt;j@aq** the macro would call itself until there are no more lines. Note that for recursion to work you need to
+`qaA;<ESC>j@aq` the macro would call itself until there are no more lines. Note that for recursion to work you need to
 save the macro in a clean register, to clean the register "a" you can execute **qaq**.
 
 
@@ -245,37 +251,39 @@ save the macro in a clean register, to clean the register "a" you can execute **
 
 The search and replace function in Vim is done through a command on _Command Mode_, that allows us to have a lot of
 control over it.
-The way you're probably going to use the most is this: **:%s/bad/good/g** this would change all words "bad" to "good" in the file.
+The way you're probably going to use the most is this: `:%s/bad/good/g` this would change all words "bad" to "good" in the file.
 It already seems pretty easy to use, but if wee want to have a bit more control we can divide it in parts:
-**:[range] s[ubstitute]/pattern/string/[flags] [count]**
+`:[range] s[ubstitute]/pattern/string/[flags] [count]`
 where the parameters between brackets are optional
 
 
 ### range {#range}
 
 On our first example the range was "%", that defines the whole file, but we can also omit it to execute the same thing
-on just one line. in a similar way you could do **:1,10s/bad/good/g** to execute the command in lines one to ten.
+on just one line. in a similar way you could do `:1,10s/bad/good/g` to execute the command in lines one to ten.
 while defining ranges you can use the next table and it's combinations:
 
-| .    | current line           |
-|------|------------------------|
-| 1    | first line             |
-| $    | last line              |
-| %    | all lines              |
-| .+1  | line after current     |
-| 1,10 | range between 1 and 10 |
+| range | description            |
+|-------|------------------------|
+| .     | current line           |
+| 1     | first line             |
+| $     | last line              |
+| %     | all lines              |
+| .+1   | line after current     |
+| 1,10  | range between 1 and 10 |
 
 
 ### flags {#flags}
 
 Flags can be combined as well, and aren't required.
-Using the previous example you can add a confirmation with the flag "c" **:$s/bad/good/gc**
+Using the previous example you can add a confirmation with the flag "c" `:$s/bad/good/gc`
 
-| g | replace all                       |
-|---|-----------------------------------|
-| c | ask for confirmation              |
-| i | ignore case for the pattern       |
-| I | don't ignore case for the pattern |
+| flag | description                       |
+|------|-----------------------------------|
+| g    | replace all                       |
+| c    | ask for confirmation              |
+| i    | ignore case for the pattern       |
+| I    | don't ignore case for the pattern |
 
 
 ### Regular expressions {#regular-expressions}
@@ -284,27 +292,27 @@ You can use regular expressions inside the commands, this gives us a lot of flex
 Notice that to use regex you need to add "\\" before the expressions so they aren't counted as regular text
 Here are some examples:
 
-**:$s/\\(bad\\|good\\)/great/g** This would replace any instance of "bad" or "good" with "great"
+`:$s/\(bad\|good\)/great/g` This would replace any instance of "bad" or "good" with "great"
 
-**:$s/\\&lt;good\\&gt;/bad/g** This would replace only good as a whole word
+`:$s/\<good\>/bad/g` This would replace only good as a whole word
 
 
 ## The global command {#the-global-command}
 
 The global command can also be quite useful, and if you understand how to use _substitute_ it is very similar.
-The syntax is: **:[range]g/pattern/command**
+The syntax is: `:[range]g/pattern/command`
 Where **pattern** is what we are looking to match in the file and **command** is what we want to execute for
 each line matching the pattern.
-As an example we can run **:g/error/d** to execute the command **d** _delete_ on every line that contains the word
+As an example we can run `:g/error/d` to execute the command **d** _delete_ on every line that contains the word
 "error".
-We could also run **:g!/error/d** to invert the search, this time deleting every line that doesn't contain "error".
+We could also run `:g!/error/d` to invert the search, this time deleting every line that doesn't contain "error".
 
-You can also execute a substitute command inside a global command like in **:g/bad/s/good/great/g** where
-it runs the command **s/good/great/g** for every line containing the word "bad"
+You can also execute a substitute command inside a global command like in `:g/bad/s/good/great/g` where
+it runs the command `s/good/great/g` for every line containing the word "bad"
 
 Note that although in this examples **d** is both a normal mode command and a command mode command,
 you can only execute command mode commands with the global command. That said, you can use the normal
-prefix to execute a normal mode command like in this example: **:g/something/normal @a** where we execute
+prefix to execute a normal mode command like in this example: `:g/something/normal @a` where we execute
 the macro in register "a" for every line containing "something".
 
 
@@ -316,12 +324,13 @@ undo the last action and **Ctr-r** to redo it. You can also use **u** with a num
 You may be thinking "what's up with time-traveling and what does it have to do with Vim?". Well, Vim allow you to
 move back and forward on your file edits not only one by one, but also by time intervals, here are some examples:
 
-| :earlier 10m | undo changes in last 10 minutes    |
-|--------------|------------------------------------|
-| :ea 2d       | undo changes in last 2 days        |
-| :later 10m   | redo changes in last 10 minutes    |
-| :lat 10s     | redo changes in last 10 seconds    |
-| :ea 3f       | undo changes in last 3 file writes |
+| command        | description                        |
+|----------------|------------------------------------|
+| `:earlier 10m` | undo changes in last 10 minutes    |
+| `:ea 2d`       | undo changes in last 2 days        |
+| `:later 10m`   | redo changes in last 10 minutes    |
+| `:lat 10s`     | redo changes in last 10 seconds    |
+| `:ea 3f`       | undo changes in last 3 file writes |
 
 
 ## Registers {#registers}
@@ -334,7 +343,7 @@ quote before its name, for example for register _a_ with _"a_.
 You can add and print text from a register with the yank and paste commands. To add text to _a_ use **"ay** and to print it
 **"ap**.
 
-To see the content of all the used registers you can use to command **:reg** or **:register**, you'll notice that there
+To see the content of all the used registers you can use to command `:reg` or `:register`, you'll notice that there
 are quite a lot of things going on.
 
 
@@ -354,11 +363,12 @@ yanked text is on **1**, the previous one is on **2**, the one before in **3** a
 
 There are 4 read only registers, where the next information is saved:
 
-| **.** | last inserted text    |
-|-------|-----------------------|
-| **%** | current file path     |
-| **:** | last executed command |
-| **#** | last edited file      |
+| register | description           |
+|----------|-----------------------|
+| **.**    | last inserted text    |
+| **%**    | current file path     |
+| **:**    | last executed command |
+| **#**    | last edited file      |
 
 This isn't read only, but the last text you search will end up on the **/** register, as expected.
 
@@ -367,7 +377,7 @@ This isn't read only, but the last text you search will end up on the **/** regi
 
 You may have realized already that macros are just strings of text saved on a register, and the **@** executes whatever is
 inside of them, you could save anything inside of those registers and even record macros without executing them before.
-With the command **:let** you can enter text directly inside a register like **:let @a='hello'**.
+With the command `:let` you can enter text directly inside a register like `:let @a='hello'`.
 
 Note that registers **a** and **A** are the same, but if you write on register **A** you'll be appending text to **a** instead of
 overwriting it.
@@ -380,8 +390,9 @@ using Vim's built in splits allows you to share registers and copy text from one
 
 This are the main commands that you need to know:
 
-| **Ctr-w v** | make a vertical split          |
+| command     | description                    |
 |-------------|--------------------------------|
+| **Ctr-w v** | make a vertical split          |
 | **Ctr-w s** | make a horizontal split        |
 | **Ctr-w h** | move to the split to the left  |
 | **Ctr-w j** | move to the split below        |
@@ -398,7 +409,7 @@ You can do so on a file called _.vimrc_ on your home directory.
 This are the most basic things that I feel are a must on any configuration:
 
 You can comment any lines that you don't want with a single **"** at the start.
-To learn more about this options you can use **:help** _option_
+To learn more about this options you can use `:help` _option_
 
 ```nil
 syntax enable                           " Enables syntax highlighing
@@ -448,8 +459,9 @@ that you use often. Luckily that is really easy to do following this syntax in y
 
 For **map_mode** you can use:
 
-| nnoremap | map keys in normal mode. |
+| command  | description              |
 |----------|--------------------------|
+| nnoremap | map keys in normal mode. |
 | inoremap | map keys in insert mode. |
 | vnoremap | map keys in visual mode. |
 
