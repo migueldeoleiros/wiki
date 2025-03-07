@@ -1,5 +1,6 @@
 ---
 title: migueldeoleiros' wiki
+date: 2025-01-11T00:00:00+01:00
 ---
 
 Welcome to my **digital garden**, where I post some of my personal notes, all written in **org-mode** from **emacs**, thanks to the power of [ox-hugo](https://ox-hugo.scripter.co/) and [Quartz](https://quartz.jzhao.xyz).
@@ -18,3 +19,7 @@ I try to categorize my notes with tags, to make them a bit easier to navigate an
 # [💻 University notes](https://wiki.migueldeoleiros.com/university)
 
 I'm in the process of cleaning up the notes I have from my degree in Software Engineering, there is more to come!
+
+# [👤 Blog posts](https://wiki.migueldeoleiros.com/blogposts)
+
+Here I write some more thought out posts
