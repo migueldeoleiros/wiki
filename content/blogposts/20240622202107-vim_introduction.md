@@ -1,7 +1,8 @@
 ---
 title: "Vim introduction, from basic to advance"
+author: ["miguel"]
 date: 2022-04-17T00:00:00+02:00
-lastmod: 2025-03-07T00:00:00+01:00
+lastmod: 2025-03-09T00:00:00+01:00
 draft: false
 ---
 
@@ -49,15 +50,16 @@ them here, but when editing text quickly the best way to move around is with **h
 
 If you are a gamer you'll know the classic **wasd**, **hjkl** is the counterpart of that on your left hand, but
 using only keys on the homerow to decrease movement, so **h** is left, **j** if up, **k** is down and **l** is right.
-Now you can move the cursor one character at a time, but that isn't very efficient. To fix that Vim divides
+Now you can move the cursor one character at a time, but that isn't very efficient. To fix that, Vim divides
 the text in units, one unit could be a character, but it could also be a word or a line.
 
 | unit      | jump to start | jump to finish |
 |-----------|---------------|----------------|
 | word      | **b**         | **e**          |
 | line      | **0**         | **$**          |
-| paragraph | **}**         | **}**          |
+| paragraph | **{**         | **}**          |
 | file      | **gg**        | **G**          |
+| window    | **H**         | **L**          |
 
 This may look overcomplicated, and you wont use all of this keys at the start, but once we learn about combining
 commands it'll make a lot more sense.

@@ -67,7 +67,7 @@ const config: QuartzConfig = {
         },
         keepBackground: false,
       }),
-      /* Plugin.ObsidianFlavoredMarkdown({ enableInHtmlEmbed: false }), */
+      Plugin.ObsidianFlavoredMarkdown({ enableInHtmlEmbed: false }),
       Plugin.OxHugoFlavouredMarkdown({ replaceOrgLatex: true }),
       Plugin.RoamFlavoredMarkdown(),
       Plugin.GitHubFlavoredMarkdown(),
