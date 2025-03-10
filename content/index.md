@@ -22,4 +22,4 @@ I'm in the process of cleaning up the notes I have from my degree in Software En
 
 # [👤 Blog posts](https://wiki.migueldeoleiros.com/blogposts)
 
-Here I write some more thought out posts
+This are post in a more narrative style, thoughts, updates and some tutorials.
