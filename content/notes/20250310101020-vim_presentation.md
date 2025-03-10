@@ -10,7 +10,11 @@ draft: false
 Links: [Vim]({{< relref "20250309132443-vim.md" >}})
 
 
-## Para seguir la charla: {#para-seguir-la-charla}
+## Notas de la  charla {#notas-de-la-charla}
+
+<https://wiki.migueldeoleiros.com/notes/20250309132443-vim>
+
+{{< figure src="/ox-hugo/wiki_vim_qr.png" >}}
 
 
 ## Qué es Vim? {#qué-es-vim}
@@ -56,19 +60,19 @@ Y porqué es más eficiente?
 
 ### <span class="org-todo todo TODO">TODO</span> translate {#translate}
 
-| Key | Description                  |
-|-----|------------------------------|
-| w   | go to start of the next word |
-| W   | go to start of the next WORD |
-| e   | go to end of the next word   |
-| E   | go to end of the next WORD   |
-| b   | go to previous (back) word   |
-| B   | go to previous (back) WORD   |
+| comando | descripción                  |
+|---------|------------------------------|
+| w       | go to start of the next word |
+| W       | go to start of the next WORD |
+| e       | go to end of the next word   |
+| E       | go to end of the next WORD   |
+| b       | go to previous (back) word   |
+| B       | go to previous (back) WORD   |
 
 
 ## Buscar {#buscar}
 
-Similar a ****Ctr-f**** en vim usamos **/**
+Similar a **Ctr-f** en vim usamos **/**
 
 Para movernos en la selección usamos **n** y **N**
 
@@ -85,6 +89,9 @@ Para volver a el modo Normal **ESC**
 Si queremos entrar en el siguiente caracter **a**
 
 Para una nueva linea **o**
+
+
+### <span class="org-todo todo TODO">TODO</span> I y A {#i-y-a}
 
 
 ## Comandos de edición {#comandos-de-edición}
@@ -123,8 +130,9 @@ podemos ejecutar comandos en la selección como **y**, **d** o **c**
 
 Para entrar en el modo de comandos usamos **:**
 
-| :help d | ayuda para el comando "d"                   |
+| comando | descripción                                 |
 |---------|---------------------------------------------|
+| :help d | ayuda para el comando "d"                   |
 | :w      | guardar archivo (write)                     |
 | :w foo  | guardar como "foo"                          |
 | :q      | salir de vim                                |
@@ -139,12 +147,16 @@ Para entrar en el modo de comandos usamos **:**
 
 ## Búsqueda y remplazo {#búsqueda-y-remplazo}
 
-**:[rango] s[ubstitute]/patrón/string/[flags] [count]**
+`:[rango] s[ubstitute]/patrón/string/[flags] [count]`
 
-\## Ejemplos:
-**:%s/bad/good/g**        **:%s/\\\\&lt;good\\\\&gt;/bad/g**
-**:%s/bad/good/gc**       **:%s/\\\\(bad\\\|good\\\)/great/g**
-**:1,10s/bad/good/g**
+
+### Ejemplos: {#ejemplos}
+
+`:%s/bad/good/g`
+`:%s/\\<good\\>/bad/g`
+`:%s/bad/good/gc`
+`:%s/\\(bad\\|good\\)/great/g`
+`:1,10s/bad/good/g`
 
 
 ### Rango {#rango}
@@ -170,19 +182,19 @@ Para entrar en el modo de comandos usamos **:**
 ## El comando "global" {#el-comando-global}
 
 Ejecuta un cómando en la línea que contenga un patrón
-**:[rango]g/patrón/comando**
+`:[rango]g/patrón/comando`
 
 
 ### Ejemplos: {#ejemplos}
 
-**:g/error/d**
+`:g/error/d`
 
-Para invertir la búsqueda **:g!/error/d**
+Para invertir la búsqueda `:g!/error/d`
 
-Podemos combinar comandos **:g/bad/s/good/great/g**
+Podemos combinar comandos `:g/bad/s/good/great/g`
 
 Podemos ejecutar un comando de <span class="underline">Normal Mode</span> con el refijo **normal**
-**:g/something/normal @a**
+`:g/something/normal @a`
 
 
 ## Deshacer, Rehacer y Viajar en el tiempo {#deshacer-rehacer-y-viajar-en-el-tiempo}
@@ -324,7 +336,7 @@ Tanto el texto copiado como el borrado se guarda por orden en los registros del
 La última palabra buscada on **/** o **?** se guarda en el registro **/**
 
 
-## Registros alfabéticos y macros {#registros-alfabéticos-y-macros}
+### Registros alfabéticos y macros {#registros-alfabéticos-y-macros}
 
 Una macro no es más que ejecutar el contenido de un registro con **@**
 
@@ -333,6 +345,16 @@ En los mísmos registros que las macros podemos guardas cualquier cosa
 Con el comando **:let** puedes introducir texto directamente : **:let @a='hola'**
 
 Los registros **a** y **A** son el mismo, pero con **A** concatenamos y con **a** sobreescribimos
+
+
+### <span class="org-todo todo TODO">TODO</span> Other registers {#other-registers}
+
+| register | description                                                                             |
+|----------|-----------------------------------------------------------------------------------------|
+| **=**    | last evaluated [expression]({{< relref "20250310142903-eval_expressions_in_vim.md" >}}) |
+| **/**    | last [search]({{< relref "20250309200126-search_in_vim.md" >}})                         |
+| **+**    | The system's clipboard                                                                  |
+| **_**    | (void) all text pasted here will be deleted forever                                     |
 
 
 ## Dividir ventanas {#dividir-ventanas}
@@ -353,6 +375,12 @@ Los registros **a** y **A** son el mismo, pero con **A** concatenamos y con **a*
 |--------------|----------------------------------------|
 | **gt**       | moverse a la siguiente pestaña         |
 | **gT**       | moverse a la anterior pestaña          |
+
+
+## <span class="org-todo todo TODO">TODO</span> File management {#file-management}
+
+
+## <span class="org-todo todo TODO">TODO</span> Multifile editing {#multifile-editing}
 
 
 ## Crear atajos de teclado Vim Classic {#crear-atajos-de-teclado-vim-classic}
