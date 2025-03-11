@@ -1,8 +1,7 @@
 ---
 title: "Vim presentation"
-author: ["miguel"]
 date: 2025-03-10T00:00:00+01:00
-lastmod: 2025-03-10T00:00:00+01:00
+lastmod: 2025-03-11T00:00:00+01:00
 tags: ["español", "vim", "slides"]
 draft: false
 ---
@@ -15,6 +14,13 @@ Links: [Vim]({{< relref "20250309132443-vim.md" >}})
 <https://wiki.migueldeoleiros.com/notes/20250309132443-vim>
 
 {{< figure src="/ox-hugo/wiki_vim_qr.png" >}}
+
+
+## Presentación completa en formato web {#presentación-completa-en-formato-web}
+
+<https://wiki.migueldeoleiros.com/notes/20250310101020-vim_presentation>
+
+{{< figure src="/ox-hugo/vim_presentation_qr.png" >}}
 
 
 ## Qué es Vim? {#qué-es-vim}
@@ -58,16 +64,16 @@ Y porqué es más eficiente?
 | ventana | H                   | L               |
 
 
-### <span class="org-todo todo TODO">TODO</span> translate {#translate}
+### palabras vs PALABRAS {#palabras-vs-palabras}
 
-| comando | descripción                  |
-|---------|------------------------------|
-| w       | go to start of the next word |
-| W       | go to start of the next WORD |
-| e       | go to end of the next word   |
-| E       | go to end of the next WORD   |
-| b       | go to previous (back) word   |
-| B       | go to previous (back) WORD   |
+| comando | descripción                                  |
+|---------|----------------------------------------------|
+| w       | ir al principio de la siguiente palabra      |
+| W       | ir al principio de la siguiente PALABRA      |
+| e       | ir al final(end) de la siguiente palabra     |
+| E       | ir al final(end) de la siguiente PALABRA     |
+| b       | ir al principio de la anterior(back) palabra |
+| B       | ir al principio de la anterior(back) PALABRA |
 
 
 ## Buscar {#buscar}
@@ -90,8 +96,8 @@ Si queremos entrar en el siguiente caracter **a**
 
 Para una nueva linea **o**
 
-
-### <span class="org-todo todo TODO">TODO</span> I y A {#i-y-a}
+Para empezar al principio de la linea **I**
+Para empezar al final de la linea **A**
 
 
 ## Comandos de edición {#comandos-de-edición}
@@ -125,6 +131,8 @@ Para el el modo <span class="underline">Visual Block</span> usamos **Ctr-v**
 
 podemos ejecutar comandos en la selección como **y**, **d** o **c**
 
+**TIP** Inserción multiple usando <span class="underline">Visual Bloc</span> + **I** o **A**
+
 
 ## Command mode {#command-mode}
 
@@ -142,7 +150,7 @@ Para entrar en el modo de comandos usamos **:**
 | :!ls    | ejecutar comando de shell "ls"              |
 | :r !ls  | ejecutar comando de shell "ls" e insertarlo |
 
-**Bonus** el comando :Sex
+Comando **:Sex** ?
 
 
 ## Búsqueda y remplazo {#búsqueda-y-remplazo}
@@ -153,9 +161,9 @@ Para entrar en el modo de comandos usamos **:**
 ### Ejemplos: {#ejemplos}
 
 `:%s/bad/good/g`
-`:%s/\\<good\\>/bad/g`
+`:%s/\<good\>/bad/g`
 `:%s/bad/good/gc`
-`:%s/\\(bad\\|good\\)/great/g`
+`:%s/\(bad\|good\)/great/g`
 `:1,10s/bad/good/g`
 
 
@@ -193,7 +201,7 @@ Para invertir la búsqueda `:g!/error/d`
 
 Podemos combinar comandos `:g/bad/s/good/great/g`
 
-Podemos ejecutar un comando de <span class="underline">Normal Mode</span> con el refijo **normal**
+Podemos ejecutar un comando de <span class="underline">Normal Mode</span> con el prefijo **normal**
 `:g/something/normal @a`
 
 
@@ -202,8 +210,9 @@ Podemos ejecutar un comando de <span class="underline">Normal Mode</span> con el
 Deshacemos cambios con **u** (podemos añadir modificador **3u**)
 Rehacemos cambios con **Ctr-r**
 
-| :earlier 10m | Deshacer cambios en los últimos 10 minutos               |
+| comando      | descripción                                              |
 |--------------|----------------------------------------------------------|
+| :earlier 10m | Deshacer cambios en los últimos 10 minutos               |
 | :ea 2d       | Deshacer cambios en los últimos 2 días                   |
 | :later 10m   | Reshacer cambios en los últimos 10 minutos               |
 | :lat 10s     | Reshacer cambios en los últimos 10 segundos              |
@@ -216,10 +225,6 @@ En Vim podemos mezclar comandos y modificadores para ejecutar diferentes
 acciones.
 
 Dividiremos las partes de un comando en 3:
-
--   Verbos
--   Modificadores
--   Nombres
 
 
 ### Verbos {#verbos}
@@ -331,11 +336,6 @@ Tanto el texto copiado como el borrado se guarda por orden en los registros del
 | # | previo archivo editado   |
 
 
-### Registros de búsqueda {#registros-de-búsqueda}
-
-La última palabra buscada on **/** o **?** se guarda en el registro **/**
-
-
 ### Registros alfabéticos y macros {#registros-alfabéticos-y-macros}
 
 Una macro no es más que ejecutar el contenido de un registro con **@**
@@ -347,17 +347,19 @@ Con el comando **:let** puedes introducir texto directamente : **:let @a='hola'*
 Los registros **a** y **A** son el mismo, pero con **A** concatenamos y con **a** sobreescribimos
 
 
-### <span class="org-todo todo TODO">TODO</span> Other registers {#other-registers}
+### Other registers {#other-registers}
 
-| register | description                                                                             |
-|----------|-----------------------------------------------------------------------------------------|
-| **=**    | last evaluated [expression]({{< relref "20250310142903-eval_expressions_in_vim.md" >}}) |
-| **/**    | last [search]({{< relref "20250309200126-search_in_vim.md" >}})                         |
-| **+**    | The system's clipboard                                                                  |
-| **_**    | (void) all text pasted here will be deleted forever                                     |
+| registro | descripción                        |
+|----------|------------------------------------|
+| =        | última expresión evaluada          |
+| +        | portapapeles del sistema           |
+| _        | (vacío) borra todo lo que peguemos |
 
 
-## Dividir ventanas {#dividir-ventanas}
+## Splits y pestañas {#splits-y-pestañas}
+
+
+### Splits {#splits}
 
 | Ctr-w v | split vertical                      |
 |---------|-------------------------------------|
@@ -369,7 +371,7 @@ Los registros **a** y **A** son el mismo, pero con **A** concatenamos y con **a*
 | Ctr-w c | cerrar (borrar) split               |
 
 
-## Crear pestañas {#crear-pestañas}
+### Pestañas {#pestañas}
 
 | **Ctrl-w T** | mover split actual a una nueva pestaña |
 |--------------|----------------------------------------|
@@ -377,10 +379,53 @@ Los registros **a** y **A** son el mismo, pero con **A** concatenamos y con **a*
 | **gT**       | moverse a la anterior pestaña          |
 
 
-## <span class="org-todo todo TODO">TODO</span> File management {#file-management}
+## File management {#file-management}
+
+Vim cuenta con un navegador de archivos integrado: **netrw**
+
+| comando   | descripción                                               |
+|-----------|-----------------------------------------------------------|
+| `:Ex`     | Abrir directorio actual en ventana actual                 |
+| `:Ex dir` | Abrir &lt;dir&gt; en ventana actual                       |
+| `:Sex`    | (sí, leiste bien) como `:Ex` pero en eun split horizontal |
+| `:Vex`    | Como `:Ex` pero en un split vertical                      |
+| `:Tex`    | Como `:Ex` pero en una pestaña nueva                      |
 
 
-## <span class="org-todo todo TODO">TODO</span> Multifile editing {#multifile-editing}
+### Comandos en netrw {#comandos-en-netrw}
+
+| comando       | descripción            |
+|---------------|------------------------|
+| &lt;Enter&gt; | abrir archivo en vim   |
+| D             | borrar(delete) archivo |
+| R             | rename archivo         |
+| X             | ejecutar archivo       |
+| %             | crear nuevo archivo    |
+
+Puedes usar _visual mode_ para seleccionar multiples archivos
+
+
+## Multifile editing {#multifile-editing}
+
+`args` contiene los argumentos pasados por comando al iniciar vim, pero podemos añadir o cambiar los elementos
+
+| comando                 | descripción                                         |
+|-------------------------|-----------------------------------------------------|
+| `:args file1 file2 ...` | popular la lista de argumentos con archivos         |
+| `:args *.txt`           | popular la lista de argumentos con todos los `.txt` |
+| `:arga file.txt`        | añadir archivo a la lista de argumentos             |
+
+Para ejecutar un comando en la lista de argumentos: `:argdo command`
+
+Para ejecutar un comando en la lista de buffers abiertos `:bufdo command`
+
+
+### Ejemplos {#ejemplos}
+
+`:argdo %s/foo/bar/g | update`
+`:argdo exe "normal @a" | update`
+`:bufdo %s/foo/bar/gc | update`
+`:bufdo exe '%!sort' | update`
 
 
 ## Crear atajos de teclado Vim Classic {#crear-atajos-de-teclado-vim-classic}
