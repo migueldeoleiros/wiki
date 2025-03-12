@@ -1,7 +1,7 @@
 ---
 title: "Vim presentation"
 date: 2025-03-10T00:00:00+01:00
-lastmod: 2025-03-11T00:00:00+01:00
+lastmod: 2025-03-12T00:00:00+01:00
 tags: ["español", "vim", "slides"]
 draft: false
 ---
@@ -9,7 +9,7 @@ draft: false
 Links: [Vim]({{< relref "20250309132443-vim.md" >}})
 
 
-## Notas de la  charla {#notas-de-la-charla}
+## Notas de la charla {#notas-de-la-charla}
 
 <https://wiki.migueldeoleiros.com/notes/20250309132443-vim>
 
