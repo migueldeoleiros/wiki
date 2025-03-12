@@ -1,7 +1,8 @@
 ---
 title: "Joining the local communities and how that is changing my life"
 date: 2023-10-22T00:00:00+02:00
-lastmod: 2025-03-07T00:00:00+01:00
+lastmod: 2025-03-12T00:00:00+01:00
+tags: ["blog", "communities", "life"]
 draft: false
 ---
 

@@ -1,7 +1,8 @@
 ---
 title: "My experience as an Erasmus student in Portugal"
 date: 2023-07-21T00:00:00+02:00
-lastmod: 2025-03-07T00:00:00+01:00
+lastmod: 2025-03-12T00:00:00+01:00
+tags: ["blog", "life"]
 draft: false
 ---
 
