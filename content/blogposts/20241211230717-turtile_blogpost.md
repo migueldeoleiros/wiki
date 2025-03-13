@@ -1,7 +1,7 @@
 ---
 title: "Developing a Wayland compositor based in wlroots"
 date: 2024-12-16T00:00:00+01:00
-lastmod: 2025-03-12T00:00:00+01:00
+lastmod: 2025-03-13T00:00:00+01:00
 tags: ["blog", "wayland", "turtile"]
 draft: false
 ---
