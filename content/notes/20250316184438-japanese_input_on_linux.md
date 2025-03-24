@@ -1,8 +1,7 @@
 ---
 title: "Japanese input on Linux"
-author: ["miguel"]
 date: 2025-03-16T00:00:00+01:00
-lastmod: 2025-03-16T00:00:00+01:00
+lastmod: 2025-03-24T00:00:00+01:00
 tags: ["tools"]
 draft: false
 ---
