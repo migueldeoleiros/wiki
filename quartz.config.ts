@@ -13,7 +13,9 @@ const config: QuartzConfig = {
     enableSPA: true,
     enablePopovers: true,
     analytics: {
-      provider: "plausible",
+      provider: "umami",
+      host: "https://cloud.umami.is",
+      websiteId: "335fb0c8-cfb6-4355-b584-78feaff7fb33"
     },
     locale: "en-US",
     baseUrl: "wiki.migueldeoleiros.com",
