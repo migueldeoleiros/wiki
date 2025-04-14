@@ -1,7 +1,7 @@
 ---
 title: "AI code features in emacs"
 date: 2025-02-17T00:00:00+01:00
-lastmod: 2025-02-18T00:00:00+01:00
+lastmod: 2025-04-08T00:00:00+02:00
 tags: ["tech", "emacs"]
 draft: false
 ---
@@ -20,7 +20,7 @@ Regardless, this is pretty easy to set up with [straight.el](https://github.com/
 ## [aider.el](https://github.com/tninja/aider.el) {#aider-dot-el}
 
 The aider.el package offers an simple UI to communicate with [Aider](https://aider.chat/) in Emacs.
-Aider allows you to use many models, with [OpenRouter](https://openrouter.ai/) there are even a couple of free models to use, just need to create an account and provide the API key.
+Aider allows you to use many models, with [OpenRouter](https://openrouter.ai/) there even are a couple of free models to use, just need to create an account and provide the API key.
 The configuration is pretty straight forward:
 
 ```emacs-lisp
@@ -42,12 +42,12 @@ The configuration is pretty straight forward:
 
 I opted to just add the config file, since it's the most versatile
 
-`aider-transient-menu` will open a nice many with a bunch of option for communicating with the AI.
+`aider-transient-menu` will open a nice manu with a bunch of option for communicating with the AI.
 I found the explain function at `C-c a e` pretty useful for understanding foreign codebases.
 
 Syntax highlighting in the aider buffer is not great at the moment, but it something that they seem to be actively working on.
 
-A downside in my opinion is the littering you get in your different repos, it creates a history file and cache in each one. It prompts you to add them to the `.gitignore`, which makes it a bit more tolerable.
+A downside in my opinion is the littering you get in your different repos, it creates a history file and cache in each one. At least it prompts you to add them to the `.gitignore`, which makes it a bit more tolerable.
 
 
 ## [copilot.el](https://github.com/copilot-emacs/copilot.el) {#copilot-dot-el}
