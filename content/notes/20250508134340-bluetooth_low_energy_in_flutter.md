@@ -6,9 +6,9 @@ tags: ["tech"]
 draft: false
 ---
 
-Links: [Flutter]({{< relref "20250130142109-flutter.md" >}})
+Links: [Flutter]({{< relref "20250130142109-flutter.md" >}}), [Bluetooth Low Energy]({{< relref "20250508142034-bluetooth_low_energy.md" >}})
 
-There are a couple of library options for managing bluetooth in flutter.
+There are a couple of library options for managing [BLE]({{< relref "20250508142034-bluetooth_low_energy.md" >}}) in flutter.
 
 
 ## FlutterBluePlus {#flutterblueplus}
