@@ -1,14 +1,19 @@
 ---
 title: "Check Point vpn in Linux"
 date: 2025-06-12T00:00:00+02:00
-lastmod: 2025-06-12T00:00:00+02:00
+lastmod: 2025-06-17T00:00:00+02:00
 draft: false
 ---
 
 Links: <https://support.checkpoint.com/results/sk/sk119772>
 
 
-## Steps on Arch {#steps-on-arch}
+## "Supported" web option {#supported-web-option}
+
+This is the official way of connecting, using a web-browser
+
+
+### Steps on Arch {#steps-on-arch}
 
 1.  Enable multilib in `/etc/pacman.conf` adding this:
 
@@ -37,7 +42,7 @@ sudo pacman -S lib32-pam lib32-libx11 lib32-gcc-libs
 ```
 
 
-## Steps on Ubuntu {#steps-on-ubuntu}
+### Steps on Ubuntu {#steps-on-ubuntu}
 
 ```shell
 apt update
@@ -54,7 +59,7 @@ apt install libpam0g:i386 libx11-6:i386 libstdc++6:i386
 ```
 
 
-## Steps to connect {#steps-to-connect}
+### Steps to connect {#steps-to-connect}
 
 1.  Go to the VPN web using Firefox or Chrome (derivatives wont work) the url should be something like `https://192.168.10.10/sslvpn`
 2.  go to `Native Applications > Settings` in the top right
@@ -63,10 +68,23 @@ apt install libpam0g:i386 libx11-6:i386 libstdc++6:i386
 5.  Go back to the VPN page and click **connect**
 
 
-## Troubleshooting {#troubleshooting}
+### Troubleshooting {#troubleshooting}
 
 Use the next command to check the logs of the process in the terminal
 
 ```shell
 java --add-exports java.base/sun.security.provider=ALL-UNNAMED -jar /usr/bin/cshell/CShell.jar /tmp/cshell.fifo
+```
+
+
+## Native applications {#native-applications}
+
+
+### snx-rs {#snx-rs}
+
+<https://github.com/ancwrd1/snx-rs>
+This option counts with both a GUI and CLI, although I wasn't able to make the GUI work,
+
+```shell
+sudo snx-rs -u <username> -p <password> -s <vpn url> -o vpn
 ```
