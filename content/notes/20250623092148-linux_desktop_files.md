@@ -20,6 +20,13 @@ In addition to the mentioned application launcher, desktop entries can be of typ
 -   `Type=Directory` Used for defining directory metadata, this are located in the given directory with the `.directory`
 
 
+## Location {#location}
+
+.desktop files can be located in:
+`/usr/share/applications`
+`~/.local/share/applications`
+
+
 ## Sample file {#sample-file}
 
 ```desktop
