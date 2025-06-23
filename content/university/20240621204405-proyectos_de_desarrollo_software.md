@@ -1,13 +1,12 @@
 ---
 title: "Proyectos de Desarrollo Software"
 date: 2024-05-01T00:00:00+02:00
-lastmod: 2025-06-02T00:00:00+02:00
+lastmod: 2025-06-23T00:00:00+02:00
 tags: ["español"]
 draft: false
 ---
 
-tags
-: [University]({{< relref "20240621135740-university.md" >}})
+Links: [University]({{< relref "20240621135740-university.md" >}})
 
 
 ## Examen {#examen}
