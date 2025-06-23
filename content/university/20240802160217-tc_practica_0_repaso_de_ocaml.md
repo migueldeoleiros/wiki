@@ -114,13 +114,15 @@ Se pide:
 
 -   Construya las funciones in_orden, pre_orden, post_orden y anchura, todas ellas de tipo 'a arbol_binario -&gt; 'a list, que devuelvan los correspondientes recorridos sobre un árbol binario dado, tal y como se muestra en los siguientes ejemplos:
 
-       3
-      /  \\
-    2    5
-         /  \\
-       4    1
-
 <!--listend-->
+
+```nil
+  3
+ / \
+2   5
+   / \
+  4   1
+```
 
 ```ocaml
 let tree = Nodo(3,Nodo(2,Vacio,Vacio),Nodo(5,Nodo(4,Vacio,Vacio),Nodo(1,Vacio,Vacio)));;
