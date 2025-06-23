@@ -1,5 +1,5 @@
 ---
-title: "Linux .desktop files"
+title: "Linux Desktop entry files"
 date: 2025-06-23T00:00:00+02:00
 lastmod: 2025-06-23T00:00:00+02:00
 tags: ["tech"]
