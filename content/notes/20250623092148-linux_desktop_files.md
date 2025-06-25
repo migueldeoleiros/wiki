@@ -1,7 +1,7 @@
 ---
 title: "Linux Desktop entry files"
 date: 2025-06-23T00:00:00+02:00
-lastmod: 2025-06-23T00:00:00+02:00
+lastmod: 2025-06-25T00:00:00+02:00
 tags: ["tech"]
 draft: false
 ---
@@ -52,6 +52,21 @@ Icon=/path/to/icon.png #can be png/svg/ico/icns
 Terminal=false #otherwise runs on default terminal
 
 Categories=Education;Languages;Java; #categories of the app
+```
+
+
+## Commands {#commands}
+
+```shell
+dekstop-file-validate sample.desktop
+```
+
+```shell
+desktop-file-install --dir=$HOME/.local/share/applications ~/sample.desktop
+```
+
+```shell
+update-desktop-database ~/.local/share/applications
 ```
 
 
