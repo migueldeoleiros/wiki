@@ -1,7 +1,7 @@
 ---
 title: "org-clock system integration"
 date: 2025-07-01T00:00:00+02:00
-lastmod: 2025-07-01T00:00:00+02:00
+lastmod: 2025-07-03T00:00:00+02:00
 tags: ["emacs"]
 draft: false
 ---
@@ -12,6 +12,12 @@ For this I've written a small script that simply return the current task as a st
 
 ```shell
 emacsclient --eval '
+(if (and (fboundp '\''org-clocking-p) (org-clocking-p))
+    (format "%s (%s)"
+            org-clock-heading
+            (org-format-time-string "%H:%M" org-clock-start-time))
+  "No ongoing task")' | sed 's/^"//;s/"$//'
+emacsclient --eval '
 (or
  (when (org-clocking-p)
    (format "%s (%s)"
@@ -20,7 +26,7 @@ emacsclient --eval '
  "No task ongoing")' | sed 's/^"//;s/"$//'
 ```
 
-The script is pretty straight forward, additional logic is only added for removing quote marks with `sed` and adding a fallback message when no task is ongoing.
+The script first checks if the function `org-clocking-p` is defined, and then obtains the heading and time, additional logic is only added for removing quote marks with `sed` and adding a fallback message when no task is ongoing.
 
 I use this script to show the current task in my taskbar, in this case using `eww`, since it's also fairly easy to add some interactivity to eww, I also implemented the next script to open the current task or agenda when you click on it.
 
