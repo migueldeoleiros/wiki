@@ -1,8 +1,7 @@
 ---
 title: "Interesting Open Source Projects"
-author: ["miguel"]
 date: 2025-02-14T00:00:00+01:00
-lastmod: 2025-02-14T00:00:00+01:00
+lastmod: 2025-08-13T00:00:00+02:00
 tags: ["tech"]
 draft: false
 ---
@@ -14,4 +13,4 @@ E-ink screen with FOSS firmware
 
 ## [BangleJs](https://banglejs.com/) {#banglejs}
 
-Opne Source Hackable Smart Watch
+Open Source Hackable Smart Watch
