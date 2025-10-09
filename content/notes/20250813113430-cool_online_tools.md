@@ -1,7 +1,7 @@
 ---
 title: "Cool online tools"
 date: 2025-08-13T00:00:00+02:00
-lastmod: 2025-08-13T00:00:00+02:00
+lastmod: 2025-10-09T00:00:00+02:00
 tags: ["tools"]
 draft: false
 ---
@@ -54,3 +54,9 @@ Opensource vector and raster graphics editor
 
 link: <https://www.photopea.com/>
 Online photo editing software, with support for a variety of formats including .pds
+
+
+## crt.sh Certificate Search {#crt-dot-sh-certificate-search}
+
+link: <https://crt.sh/>
+Search certificates for a domain, it's an easy way to find subdomains
