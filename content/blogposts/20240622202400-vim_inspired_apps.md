@@ -1,11 +1,12 @@
 ---
 title: "Vim inspired apps to cover your workflow"
 date: 2022-04-18T00:00:00+02:00
-lastmod: 2025-03-07T00:00:00+01:00
+lastmod: 2025-03-13T00:00:00+01:00
+tags: ["blog", "showcase", "vim"]
 draft: false
 ---
 
-Links: [Personal Blog]({{< relref "20240622202252-personal_blog.md" >}}), [GPUL]({{< relref "20240622201912-gpul.md" >}}), [Vim Introduction]({{< relref "20240622202107-vim_introduction.md" >}})
+Links: [Personal Blog]({{< relref "20240622202252-personal_blog.md" >}}), [GPUL]({{< relref "20240622201912-gpul.md" >}}), [Vim Introduction]({{< relref "20240622202724-my_experience_as_an_erasmus_student.md" >}})
 
 As a Vim user it's no surprise to find yourself using Vim commands where you shouldn't, pressing ESC when you should have
 pressed Enter, and writhing gibberish like "jjjkkkjkjkj" when you try to scroll on some regular app.

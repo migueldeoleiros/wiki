@@ -1,8 +1,8 @@
 ---
 title: "Vim introduction, from basic to advance"
-author: ["miguel"]
 date: 2022-04-17T00:00:00+02:00
-lastmod: 2025-03-09T00:00:00+01:00
+lastmod: 2025-03-13T00:00:00+01:00
+tags: ["blog", "tutorial", "vim"]
 draft: false
 ---
 

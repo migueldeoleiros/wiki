@@ -1,8 +1,7 @@
 ---
 title: "Undo, redo and time-travel in Vim"
-author: ["miguel"]
 date: 2025-03-09T00:00:00+01:00
-lastmod: 2025-03-10T00:00:00+01:00
+lastmod: 2025-03-11T00:00:00+01:00
 tags: ["vim"]
 draft: false
 ---

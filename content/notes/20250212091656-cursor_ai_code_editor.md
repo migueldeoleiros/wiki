@@ -1,7 +1,7 @@
 ---
 title: "Cursor AI code editor"
 date: 2025-02-12T00:00:00+01:00
-lastmod: 2025-02-25T00:00:00+01:00
+lastmod: 2025-05-30T00:00:00+02:00
 tags: ["tools"]
 draft: false
 ---
@@ -20,7 +20,7 @@ Cursor is an AI-powered code editor designed to enhance coding efficiency and pr
 -   **Smart Code Improvements**: The editor can refactor and optimize code by converting loops to list comprehensions, simplifying conditionals, and removing unused variables.
 -   **Plain Language Commands**: Can generate code using natural language instructions. For example, typing "Create a function to calculate the Fibonacci sequence" can result in a fully generated function.
 -   **In-Context Help and Debugging**: Provides real-time explanations and documentation as you code. It also assists in debugging by highlighting issues and suggesting fixes.
--   **Codebase Understanding**: Can comprehend and provide insights into the entire codebase, allowing developers to query the codebase in natural language5.
+-   **Codebase Understanding**: Can comprehend and provide insights into the entire codebase, allowing developers to query the codebase in natural language.
 -   **Extension Compatibility**: As a fork of VS Code, Cursor supports existing extensions and settings, ensuring a seamless integration into developers' workflows. (importing all configurations on startup can result in unexpected consequences)
 
 
@@ -97,7 +97,7 @@ Documentation was already important before AI was a thing, having proper documen
 
 Use `Ask` for smaller tasks and for explaining code/commands. Use it to ask questions and navigate your codebase.
 Use `Edit` or `Agent` for writing the code, tag your `instructions.md` inside the composer always and tell him to update it as the project progresses.
-Only ask `Edit` and `Agent` to do one task at a time. Make it make the changes step by step, if you ask to it to edit multiple files it will hallucinate and you will lose control.
+Only ask `Edit` and `Agent` to do one task at a time. Make it make the changes step by step, if you ask it to edit multiple files it will hallucinate and you will lose control.
 
 Always verify the code is clean before approving the change.
 

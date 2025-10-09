@@ -1,0 +1,294 @@
+---
+title: "TC Práctica 1 (autómatas finitos)"
+date: 2023-12-01T00:00:00+01:00
+lastmod: 2025-06-23T00:00:00+02:00
+tags: ["español"]
+draft: false
+---
+
+## Setup {#setup}
+
+```ocaml
+#load "ocaml-talf/src/talf.cma";;
+#directory "ocaml-talf/src";;
+open Conj;;
+open Auto;;
+open Ergo;;
+open Graf;;
+
+```
+
+Un automata finito viene definido por la 5-tupla **AF = (Q,E,q0,d,F)** donde:
+
+| Q  | conjunto de estados      | estado conjunto  |
+|----|--------------------------|------------------|
+| E  | alfabeto de entrada      | simbolo conjunto |
+| q0 | estado inicial           | estado           |
+| d  | funcion  de transicion   | arco_af conjunto |
+| F  | conjunto estados finales | estado conjunto  |
+
+
+## Ejercicio 1 {#ejercicio-1}
+
+
+### es_afne : Auto.af -&gt; bool {#es-afne-auto-dot-af-bool}
+
+Implemente una función **es_afne : Auto.af -&gt; bool** que reciba como argumento un autómata finito, y que devuelva **true** si se trata de un autómata que presenta alguna épsilon-transición, o **false** en caso contrario.
+
+```ocaml
+let es_afne (Af (estados, alfabeto, e_ini, arcos, e_fin)) =
+  let rec aux = function
+    | Conjunto [] -> false
+    | _ -> true
+  in aux (avanza (Terminal "") estados (Af (estados, alfabeto, e_ini, arcos, e_fin)));;
+
+```
+
+-   Utiliza una función auxiliar (aux) con pattern matching para verificar si hay épsilon-transiciones en los arcos del autómata.
+-   Dentro de aux, invoca la función avanza con un estado terminal vacío Terminal "", y si retornara algun resultado confirmaría que sí hay épsilon-transiciones
+
+
+#### Ejemplo {#ejemplo}
+
+```ocaml
+let afne = Af (
+    Conjunto [Estado "0"; Estado "1"; Estado "2"; Estado "3"], (*estados*)
+
+    Conjunto [Terminal "a"; Terminal "b"; Terminal "c"], (*alfabeto*)
+
+    Estado "0", (*estado inicial*)
+
+    Conjunto [Arco_af (Estado "0", Estado "1", Terminal "a"); (*funcion de transicion*)
+    Arco_af (Estado "1", Estado "1", Terminal "b");
+    Arco_af (Estado "1", Estado "2", Terminal "a");
+    Arco_af (Estado "2", Estado "0", Terminal "");
+    Arco_af (Estado "2", Estado "3", Terminal "c")],
+
+    Conjunto [Estado "1"; Estado "3"] (*estados finales*)
+  );;
+
+es_afne afne;;
+```
+
+```ocaml
+let afn = Af (
+    Conjunto [Estado "0"; Estado "1"; Estado "2"; Estado "3"], (*estados*)
+
+    Conjunto [Terminal "a"; Terminal "b"; Terminal "c"], (*alfabeto*)
+
+    Estado "0", (*estado inicial*)
+
+    Conjunto [Arco_af (Estado "0", Estado "1", Terminal "a"); (*funcion de transicion*)
+    Arco_af (Estado "1", Estado "1", Terminal "b");
+    Arco_af (Estado "1", Estado "2", Terminal "a");
+    Arco_af (Estado "2", Estado "0", Terminal "a");
+    Arco_af (Estado "2", Estado "3", Terminal "a");
+    Arco_af (Estado "2", Estado "3", Terminal "c")],
+
+    Conjunto [Estado "1"; Estado "3"] (*estados finales*)
+  );;
+
+es_afne afn;;
+```
+
+
+### es_afn : Auto.af -&gt; bool {#es-afn-auto-dot-af-bool}
+
+Implemente una función **es_afn : Auto.af -&gt; bool** que reciba como argumento un autómata finito, y que devuelva **true** si se trata de un autómata que presenta algún tipo de no determinismo (excepto épsilon-transiciones), o **false** en caso contrario.
+
+```ocaml
+let get_simbols estado (Conjunto arcos) =
+  let rec aux arcs sim = match arcs with
+    | [] -> sim
+    | (Arco_af (e, d, s))::t -> if (e=estado) then (aux t (s::sim)) else (aux t sim)
+  in aux arcos [];;
+
+```
+
+Toma un estado y un conjunto de arcos y devuelve una lista de símbolos de las transiciones salientes desde ese estado. Si hay varias transiciones con el mismo símbolo, este símbolo puede repetirse en la lista.
+
+```ocaml
+let es_afn (Af (Conjunto estados, alfabeto, e_ini, arcos, e_fin)) =
+  let rec aux = function
+    | [] -> false
+    | h::t ->
+       let simbols = (get_simbols h arcos) in
+       if (List.length simbols) = (cardinal (conjunto_of_list(simbols))) then (*Comprobación item repetido*)
+         aux t
+       else
+         true
+  in aux estados;;
+
+```
+
+-   Utiliza una función auxiliar (aux) con pattern matching para iterar sobre los estados del autómata.
+-   En cada iteración, obtiene la lista de símbolos de las transiciones salientes desde el estado actual utilizando la función get_simbols.
+-   Luego, compara la longitud de esta lista con la cardinalidad del conjunto de símbolos. Si son diferentes, significa que hay al menos un símbolo repetido en las transiciones salientes del estado actual.
+-   Si encuentra algún estado con símbolos repetidos en sus transiciones salientes, devuelve true, indicando la presencia de no determinismo en el autómata. Si recorre todos los estados y no encuentra ninguno con símbolos repetidos, devuelve false.
+
+
+#### Ejemplo {#ejemplo}
+
+```ocaml
+let afn = Af (
+    Conjunto [Estado "0"; Estado "1"; Estado "2"; Estado "3"], (*estados*)
+
+    Conjunto [Terminal "a"; Terminal "b"; Terminal "c"], (*alfabeto*)
+
+    Estado "0", (*estado inicial*)
+
+    Conjunto [Arco_af (Estado "0", Estado "1", Terminal "a"); (*funcion de transicion*)
+    Arco_af (Estado "1", Estado "1", Terminal "b");
+    Arco_af (Estado "1", Estado "2", Terminal "a");
+    Arco_af (Estado "2", Estado "0", Terminal "a");
+    Arco_af (Estado "2", Estado "3", Terminal "a");
+    Arco_af (Estado "2", Estado "3", Terminal "c")],
+
+    Conjunto [Estado "1"; Estado "3"] (*estados finales*)
+  );;
+
+es_afn afn;;
+```
+
+
+### es_afd : Auto.af -&gt; bool {#es-afd-auto-dot-af-bool}
+
+Implemente una función **es_afd : Auto.af -&gt; bool** que reciba como argumento un autómata finito, y que devuelva **true** si se trata de un autómata totalmente determinista, o **false** en caso contrario.
+
+```ocaml
+let es_afd (Af (Conjunto estados, alfabeto, e_ini, arcos, e_fin)) =
+  let num_estados = List.length estados in
+  let num_simbolos = cardinal alfabeto in
+  let num_arcos = cardinal arcos in
+  let is_non_determinism = es_afn (Af (Conjunto estados, alfabeto, e_ini, arcos, e_fin)) in
+  let is_full_deterministic = num_arcos = num_estados * num_simbolos in
+  is_full_deterministic && (not is_non_determinism);;
+
+```
+
+-   Comprueba si el numero de arcos es igual al numero de estado por el numero de simbolos en el alfabeto
+-   Usando la funcion es_afn calcula si el automata es determinista, y si cumple ambas premisas retorna true;
+
+
+#### Ejemplo {#ejemplo}
+
+```ocaml
+let afd = Af (
+    Conjunto [Estado "0"; Estado "1"; Estado "2"; Estado "3"], (*estados*)
+
+    Conjunto [Terminal "a"; Terminal "b"], (*alfabeto*)
+
+    Estado "0", (*estado inicial*)
+
+    Conjunto [Arco_af (Estado "0", Estado "1", Terminal "a"); (*funcion de transicion*)
+    Arco_af (Estado "0", Estado "0", Terminal "b");
+    Arco_af (Estado "1", Estado "1", Terminal "b");
+    Arco_af (Estado "1", Estado "2", Terminal "a");
+    Arco_af (Estado "2", Estado "0", Terminal "a");
+    Arco_af (Estado "3", Estado "3", Terminal "a");
+    Arco_af (Estado "3", Estado "3", Terminal "b");
+    Arco_af (Estado "2", Estado "3", Terminal "b")],
+
+    Conjunto [Estado "1"; Estado "3"] (*estados finales*)
+  );;
+
+es_afd afd;;
+```
+
+
+## Ejercicio 2 {#ejercicio-2}
+
+Implemente una función **equivalentes : Auto.af -&gt; Auto.af -&gt; bool** que reciba como argumentos dos autómatas finitos y que devuelva **true** cuando ambos autómatas acepten el mismo lenguaje, o **false** en caso contrario.
+
+```ocaml
+let rec siguiente estado simbolo = function
+  | [] -> estado;
+  | h :: t ->
+     match h with Arco_af (origen, destino, simbolo_arco) ->
+       if (origen = estado) && (simbolo_arco = simbolo) then destino
+       else siguiente estado simbolo t ;;
+
+```
+
+Toma un estado, un símbolo y una lista de arcos y devuelve el estado siguiente después de la transición con ese símbolo desde el estado dado
+
+```ocaml
+let equivalentes (Af (estados1, alfabeto1, e_ini1, arcos1, e_fin1))
+                 (Af (estados2, alfabeto2, e_ini2, arcos2, e_fin2)) =
+  let alfabeto = Conj.union alfabeto1 alfabeto2 in
+  let queue = Queue.create () in
+  Queue.add (e_ini1, e_ini2) queue;
+  let rec consume queue visitados =
+    if Queue.is_empty queue then true
+    else
+      let estado_actual = Queue.pop queue in
+      if Conj.pertenece estado_actual visitados then
+        consume queue visitados
+      else
+        if not ((Conj.pertenece (fst estado_actual) e_fin1) = (Conj.pertenece (snd estado_actual) e_fin2)) then
+          false
+        else
+          let rec procesar = function
+            | [] -> consume queue (Conj.agregar estado_actual visitados)
+            | h :: t ->
+               let nuevo_estado1 = siguiente (fst estado_actual) h (Conj.list_of_conjunto arcos1) in
+               let nuevo_estado2 = siguiente (snd estado_actual) h (Conj.list_of_conjunto arcos2) in
+               Queue.add (nuevo_estado1, nuevo_estado2) queue;
+               procesar t
+          in
+          procesar (Conj.list_of_conjunto alfabeto);
+  in consume queue Conj.conjunto_vacio;;
+
+```
+
+-   Crea un conjunto de alfabeto combinado a partir de los alfabetos de los dos autómatas usando la unión de conjuntos (Conj.union).
+-   Inicializa una cola (queue) para realizar un recorrido y una estructura para llevar un registro de los estados visitados (visitados).
+-   Comienza el algoritmo de recorrido mientras haya elementos en la cola:
+    -   Toma un par de estados actuales (uno de cada autómata) de la cola.
+    -   Si el par de estados actuales ya ha sido visitado, continúa con el siguiente elemento de la cola.
+    -   Verifica si hay diferencias entre la aceptación de estados finales en ambos autómatas. Si hay diferencias, devuelve false.
+    -   Si no hay diferencias, procesa cada símbolo del alfabeto:
+        -   Calcula el próximo estado de ambos autómatas usando la función siguiente.
+        -   Agrega el par de próximos estados a la cola para su posterior procesamiento.
+-   Si termina el recorrido sin encontrar diferencias en los estados finales, devuelve true.
+
+
+### Ejemplo {#ejemplo}
+
+```ocaml
+let af1 = Af (
+    Conjunto [Estado "0"; Estado "1"; Estado "2"], (*estados*)
+
+    Conjunto [Terminal "a"; Terminal "b"], (*alfabeto*)
+
+    Estado "0", (*estado inicial*)
+
+    Conjunto [Arco_af (Estado "0", Estado "1", Terminal "a"); (*funcion de transicion*)
+    Arco_af (Estado "1", Estado "1", Terminal "b");
+    Arco_af (Estado "1", Estado "2", Terminal "a");
+    Arco_af (Estado "2", Estado "2", Terminal "b")],
+
+    Conjunto [Estado "2"] (*estados finales*)
+  );;
+
+equivalentes af1 af1;;
+```
+
+```ocaml
+let af2 = Af (
+    Conjunto [Estado "0"; Estado "1"; Estado "2"], (*estados*)
+
+    Conjunto [Terminal "a"; Terminal "b"], (*alfabeto*)
+
+    Estado "0", (*estado inicial*)
+
+    Conjunto [Arco_af (Estado "0", Estado "1", Terminal "a"); (*funcion de transicion*)
+    Arco_af (Estado "1", Estado "2", Terminal "b");
+    Arco_af (Estado "1", Estado "2", Terminal "a");
+    Arco_af (Estado "2", Estado "2", Terminal "b")],
+
+    Conjunto [Estado "2"] (*estados finales*)
+  );;
+
+equivalentes af1 af2;;
+```
