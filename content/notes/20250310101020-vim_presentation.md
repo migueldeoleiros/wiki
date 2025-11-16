@@ -1,7 +1,8 @@
 ---
 title: "Vim presentation"
+author: ["miguel"]
 date: 2025-03-10T00:00:00+01:00
-lastmod: 2025-03-12T00:00:00+01:00
+lastmod: 2025-11-16T00:00:00+01:00
 tags: ["español", "vim", "slides"]
 draft: false
 ---
@@ -42,6 +43,8 @@ Y porqué es más eficiente?
 
 -   **Command** mode
 
+-   **Replace** mode
+
 
 ## Comandos para moverse {#comandos-para-moverse}
 
@@ -76,7 +79,7 @@ Y porqué es más eficiente?
 | B       | ir al principio de la anterior(back) PALABRA |
 
 
-## Buscar {#buscar}
+## Busqueda global {#busqueda-global}
 
 Similar a **Ctr-f** en vim usamos **/**
 
@@ -87,9 +90,21 @@ Para buscar en el otro sentido (encima) usamos **?**
 Podemos buscar la palabra actual con **\*** o **#** para el sentido inverso
 
 
+## Busqueda de carácteres {#busqueda-de-carácteres}
+
+Con **f** y **t** podemos saltar al siguiente match de cualquier carácter
+**f** saltará justo encima, mientras que **t** dejará el cursor justo antes
+
+Con **,** y **;** podemos ir al match anterior o al siguiente respectivamente
+
+**F** y **T** buscar en la direción contraria
+
+También podemos ir al match de una llave o paréntesis con **%**
+
+
 ## Insert Mode {#insert-mode}
 
-para entrar en <span class="underline">Insert Mode</span> usamos **i**
+Para entrar en <span class="underline">Insert Mode</span> usamos **i**
 Para volver a el modo Normal **ESC**
 
 Si queremos entrar en el siguiente caracter **a**
@@ -98,6 +113,14 @@ Para una nueva linea **o**
 
 Para empezar al principio de la linea **I**
 Para empezar al final de la linea **A**
+
+
+## Replace Mode {#replace-mode}
+
+Para entrar en <span class="underline">Replace Mode</span> usamos **R**
+Para volver a el modo Normal **ESC**
+
+Este modo nos permite remplazar el texto mientras estemos en él
 
 
 ## Comandos de edición {#comandos-de-edición}

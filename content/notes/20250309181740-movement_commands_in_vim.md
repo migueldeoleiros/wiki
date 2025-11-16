@@ -2,7 +2,7 @@
 title: "Movement commands in Vim"
 author: ["miguel"]
 date: 2025-03-09T00:00:00+01:00
-lastmod: 2025-03-09T00:00:00+01:00
+lastmod: 2025-11-16T00:00:00+01:00
 tags: ["vim"]
 draft: false
 ---
@@ -47,7 +47,7 @@ For words we have a couple more commads that can be useful for more granular con
 The differences between a _word_ and a _WORD_ in Vim is that the first one can be separated by characters like `.` or `-`
 A _WORD_ will be limited only by whitespaces, so `hello-world` will be one _WORD_ but two _words_
 
-You can also move to the matching pair of (), {}. or [], by pressing **%**.
+You can also move to the matching pair of (), {}. or [], by pressing **%** while on top of one of the characters.
 
 > [!info] Related post
 > For moving to specific words or characters in the file check out [Search in Vim]({{< relref "20250309200126-search_in_vim.md" >}})
