@@ -78,6 +78,27 @@ Y porqué es más eficiente?
 | B       | ir al principio de la anterior(back) PALABRA |
 
 
+## Insert Mode {#insert-mode}
+
+Para entrar en <span class="underline">Insert Mode</span> usamos **i**
+Para volver a el modo Normal **ESC**
+
+Si queremos entrar en el siguiente caracter **a**
+
+Para una nueva linea **o**
+
+Para empezar al principio de la linea **I**
+Para empezar al final de la linea **A**
+
+
+## Replace Mode {#replace-mode}
+
+Para entrar en <span class="underline">Replace Mode</span> usamos **R**
+Para volver a el modo Normal **ESC**
+
+Este modo nos permite remplazar el texto mientras estemos en él
+
+
 ## Busqueda global {#busqueda-global}
 
 Similar a **Ctr-f** en vim usamos **/**
@@ -101,27 +122,6 @@ Con **,** y **;** podemos ir al match anterior o al siguiente respectivamente
 También podemos ir al match de una llave o paréntesis con **%**
 
 
-## Insert Mode {#insert-mode}
-
-Para entrar en <span class="underline">Insert Mode</span> usamos **i**
-Para volver a el modo Normal **ESC**
-
-Si queremos entrar en el siguiente caracter **a**
-
-Para una nueva linea **o**
-
-Para empezar al principio de la linea **I**
-Para empezar al final de la linea **A**
-
-
-## Replace Mode {#replace-mode}
-
-Para entrar en <span class="underline">Replace Mode</span> usamos **R**
-Para volver a el modo Normal **ESC**
-
-Este modo nos permite remplazar el texto mientras estemos en él
-
-
 ## Comandos de edición {#comandos-de-edición}
 
 Para remplazar un caracter usamos **r**
@@ -132,7 +132,7 @@ Para remplazar una palabra **cw**
 
 ## Copiar, pegar, y borrar {#copiar-pegar-y-borrar}
 
-Similar a ****Ctr-c**** y ****Ctr-v**** en Vim usamos:
+Similar a **Ctr-c** y **Ctr-v** en Vim usamos:
      **y** yank (copy)
      **p** paste
 
@@ -288,7 +288,8 @@ Dividiremos las partes de un comando en 3:
 
 ### Crear "frases" {#crear-frases}
 
-Podemos repetir un comando N veces añadiendo un modificador antes: **2w**
+Podemos repetir un comando N veces añadiendo
+un modificador antes **2w**
 Podemos añadir un verbo antes del modificador: **d2w**
 
 -   **vap** Seleccionar un párrafo (visual around paragraph)
@@ -313,7 +314,7 @@ Puedes repetirlo tantas veces como quieras o usar un modificador de número
 
 ### Grabar una macro {#grabar-una-macro}
 
-1.  Para empezar a grabar una macro usamos **q** en <span class="underline">Normal Mode</span>
+1.  Para empezar a grabar una macro pulsamos "q" en <span class="underline">Normal Mode</span>
 2.  Escogemos el registro donde guardarla por ejemplo **a**
 3.  Ejecutamos los comando a grabar
 4.  Pulsamos **q** otra vez
@@ -321,7 +322,7 @@ Puedes repetirlo tantas veces como quieras o usar un modificador de número
 
 ### Ejecutar una macro {#ejecutar-una-macro}
 
-En <span class="underline">Normal Mode</span> usamos **@** + el registro, por ejemplo **a** : **@a**
+En <span class="underline">Normal Mode</span> usamos "@" + el registro, por ejemplo **a** : **@a**
 Podemos ejecutar la repetir la última macro con **@@** en lugar de **.@**
 
 Podemos usar recursión en una macro para ejecutarla en todo un archivo
