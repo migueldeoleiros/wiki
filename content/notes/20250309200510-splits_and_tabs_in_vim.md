@@ -1,8 +1,7 @@
 ---
 title: "Splits and tabs in Vim"
-author: ["miguel"]
 date: 2025-03-09T00:00:00+01:00
-lastmod: 2025-03-10T00:00:00+01:00
+lastmod: 2025-11-17T00:00:00+01:00
 tags: ["vim"]
 draft: false
 ---
@@ -23,6 +22,7 @@ Using Vim's built in splits and tabs allows you to share registers and copy text
 | **Ctr-w k** | move to the split above        |
 | **Ctr-w l** | move to the split to the right |
 | **Ctr-w c** | close (remove) split           |
+| **Ctr-w x** | intercambiar split             |
 
 
 ## Tabs {#tabs}

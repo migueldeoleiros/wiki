@@ -1,8 +1,7 @@
 ---
 title: "Vim presentation"
-author: ["miguel"]
 date: 2025-03-10T00:00:00+01:00
-lastmod: 2025-11-16T00:00:00+01:00
+lastmod: 2025-11-17T00:00:00+01:00
 tags: ["español", "vim", "slides"]
 draft: false
 ---
@@ -392,6 +391,7 @@ Los registros **a** y **A** son el mismo, pero con **A** concatenamos y con **a*
 | Ctr-w k | moverse a la ventana encima         |
 | Ctr-w l | moverse a la ventana a la derecha   |
 | Ctr-w c | cerrar (borrar) split               |
+| Ctr-w x | intercambiar split                  |
 
 
 ### Pestañas {#pestañas}
