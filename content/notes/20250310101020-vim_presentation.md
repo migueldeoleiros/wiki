@@ -1,7 +1,7 @@
 ---
 title: "Vim presentation"
 date: 2025-03-10T00:00:00+01:00
-lastmod: 2025-11-17T00:00:00+01:00
+lastmod: 2025-11-18T00:00:00+01:00
 tags: ["español", "vim", "slides"]
 draft: false
 ---
@@ -99,29 +99,6 @@ Para volver a el modo Normal **ESC**
 Este modo nos permite remplazar el texto mientras estemos en él
 
 
-## Busqueda global {#busqueda-global}
-
-Similar a **Ctr-f** en vim usamos **/**
-
-Para movernos en la selección usamos **n** y **N**
-
-Para buscar en el otro sentido (encima) usamos **?**
-
-Podemos buscar la palabra actual con **\*** o **#** para el sentido inverso
-
-
-## Busqueda de carácteres {#busqueda-de-carácteres}
-
-Con **f** y **t** podemos saltar al siguiente match de cualquier carácter
-**f** saltará justo encima, mientras que **t** dejará el cursor justo antes
-
-Con **,** y **;** podemos ir al match anterior o al siguiente respectivamente
-
-**F** y **T** buscar en la direción contraria
-
-También podemos ir al match de una llave o paréntesis con **%**
-
-
 ## Comandos de edición {#comandos-de-edición}
 
 Para remplazar un caracter usamos **r**
@@ -154,6 +131,29 @@ Para el el modo <span class="underline">Visual Block</span> usamos **Ctr-v**
 podemos ejecutar comandos en la selección como **y**, **d** o **c**
 
 **TIP** Inserción multiple usando <span class="underline">Visual Bloc</span> + **I** o **A**
+
+
+## Busqueda global {#busqueda-global}
+
+Similar a **Ctr-f** en vim usamos **/**
+
+Para movernos en la selección usamos **n** y **N**
+
+Para buscar en el otro sentido (encima) usamos **?**
+
+Podemos buscar la palabra actual con **\*** o **#** para el sentido inverso
+
+
+## Busqueda de carácteres {#busqueda-de-carácteres}
+
+Con **f** y **t** podemos saltar al siguiente match de cualquier carácter
+**f** saltará justo encima, mientras que **t** dejará el cursor justo antes
+
+Con **,** y **;** podemos ir al match anterior o al siguiente respectivamente
+
+**F** y **T** buscar en la direción contraria
+
+También podemos ir al match de una llave o paréntesis con **%**
 
 
 ## Command mode {#command-mode}
