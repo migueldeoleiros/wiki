@@ -58,6 +58,15 @@ This is a comprehensive guide/book that explains the writing system, and grammar
 It's what you need to study on top of the vocabulary to actually being able to understand and speak the language.
 
 
+### AI LLMs like ChatGPT and Gemini {#ai-llms-like-chatgpt-and-gemini}
+
+AI is actually a great resource for language learning.
+I use it for insights on vocabulary and expressions that dictionaries don't explain in detail
+This is specially useful for informal expressions that you just don't find on dictionaries.
+LLMs can also be used for practicing, once you get to a decent level, with the advantage that you can tell them to correct you, or use specific vocabulary, explain itself, and talk about anything you are interested in.
+You need to be mindful of the information it gives you, it does lie and it lies with complete confidence, specially if you ask about some obscure knowledge like etymology.
+
+
 ## Browser plugins {#browser-plugins}
 
 
