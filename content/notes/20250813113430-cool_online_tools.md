@@ -1,7 +1,7 @@
 ---
 title: "Cool online tools"
 date: 2025-08-13T00:00:00+02:00
-lastmod: 2026-03-24T00:00:00+01:00
+lastmod: 2026-06-11T00:00:00+02:00
 tags: ["tools"]
 draft: false
 ---
@@ -56,9 +56,9 @@ link: <https://www.photopea.com/>
 Online photo editing software, with support for a variety of formats including .pds
 
 
-## crt.sh Certificate Search {#crt-dot-sh-certificate-search}
+## osint.sh Certificate Search {#osint-dot-sh-certificate-search}
 
-link: <https://crt.sh/>
+link: <https://osint.sh/crt/>
 Search certificates for a domain, it's an easy way to find subdomains
 
 
