@@ -1,0 +1,220 @@
+# yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
+configuration:
+  pageTitle: migueldeoleiros' wiki
+  pageTitleSuffix: ""
+  enableSPA: true
+  enablePopovers: true
+  analytics:
+    provider: umami
+    host: https://cloud.umami.is
+    websiteId: 335fb0c8-cfb6-4355-b584-78feaff7fb33
+  locale: en-US
+  baseUrl: wiki.migueldeoleiros.com
+  ignorePatterns:
+    - private
+    - templates
+    - .obsidian
+    - .org
+  theme:
+    fontOrigin: googleFonts
+    cdnCaching: true
+    typography:
+      header: Merriweather Sans
+      body: Source Sans Pro
+      code: JetBrains Mono
+    colors:
+      lightMode:
+        light: "#D4DAE8"
+        lightgray: "#AFB4C0"
+        gray: "#404159"
+        darkgray: "#242532"
+        dark: "#13141B"
+        secondary: "#0F3D99"
+        tertiary: "#0F8499"
+        highlight: rgba(143, 159, 169, 0.15)
+        textHighlight: "#DDC16E88"
+      darkMode:
+        light: "#090a11"
+        lightgray: "#242532"
+        gray: "#404159"
+        darkgray: "#AFB4C0"
+        dark: "#D4DAE8"
+        secondary: "#7BA3F4"
+        tertiary: "#51BACD"
+        highlight: rgba(143, 159, 169, 0.15)
+        textHighlight: "#DFAD1688"
+plugins:
+  - source: "@quartz-community/note-properties"
+    enabled: true
+    options:
+      hidePropertiesView: true
+    order: 5
+  - source: "@quartz-community/created-modified-date"
+    enabled: true
+    options:
+      defaultDateType: created
+      priority: [frontmatter, git, filesystem]
+    order: 10
+  - source: "@quartz-community/syntax-highlighting"
+    enabled: true
+    options:
+      theme:
+        light: github-light
+        dark: github-dark
+      keepBackground: false
+    order: 20
+  - source: "@quartz-community/obsidian-flavored-markdown"
+    enabled: true
+    options:
+      enableInHtmlEmbed: false
+    order: 30
+  - source: "@quartz-community/ox-hugo"
+    enabled: true
+    options:
+      replaceOrgLatex: true
+    order: 31
+  - source: "@quartz-community/roam"
+    enabled: true
+    order: 32
+  - source: "@quartz-community/github-flavored-markdown"
+    enabled: true
+    order: 40
+  - source: "@quartz-community/table-of-contents"
+    enabled: true
+    options:
+      showByDefault: true
+    order: 50
+    layout:
+      position: left
+      priority: 50
+      display: desktop-only
+  - source: "@quartz-community/crawl-links"
+    enabled: true
+    options:
+      markdownLinkResolution: shortest
+    order: 60
+  - source: "@quartz-community/description"
+    enabled: true
+    order: 70
+  - source: "@quartz-community/latex"
+    enabled: true
+    options:
+      renderEngine: katex
+    order: 80
+  - source: "@quartz-community/hard-line-breaks"
+    enabled: true
+    order: 90
+  - source: "@quartz-community/quartz-fonts"
+    enabled: true
+  - source: "@quartz-community/remove-draft"
+    enabled: true
+  - source: "@quartz-community/alias-redirects"
+    enabled: true
+    options:
+      enableCaseRedirects: true
+  - source: "@quartz-community/content-index"
+    enabled: true
+    options:
+      enableSiteMap: true
+      enableRSS: true
+      includeEmptyFiles: false
+  - source: "@quartz-community/favicon"
+    enabled: true
+  - source: "@quartz-community/cname"
+    enabled: true
+  - source: "@quartz-community/content-page"
+    enabled: true
+  - source: "@quartz-community/folder-page"
+    enabled: true
+  - source: "@quartz-community/tag-page"
+    enabled: true
+  - source: "@quartz-community/page-title"
+    enabled: true
+    layout:
+      position: left
+      priority: 10
+  - source: "@quartz-community/spacer"
+    enabled: true
+    layout:
+      position: left
+      priority: 20
+      display: mobile-only
+  - source: "@quartz-community/search"
+    enabled: true
+    layout:
+      position: left
+      priority: 30
+  - source: "@quartz-community/darkmode"
+    enabled: true
+    layout:
+      position: left
+      priority: 40
+  - source: "@quartz-community/recent-notes"
+    enabled: true
+    options:
+      title: Recent notes
+      limit: 5
+      linkToMore: notes
+      hideTagPages: true
+      hideFolderPages: true
+    layout:
+      position: left
+      priority: 60
+      display: desktop-only
+  - source: "@quartz-community/graph"
+    enabled: true
+    options:
+      globalGraph:
+        repelForce: 6.0
+        centerForce: 1.5
+    layout:
+      position: right
+      priority: 10
+  - source: "@quartz-community/explorer"
+    enabled: true
+    layout:
+      position: right
+      priority: 20
+      display: desktop-only
+  - source: "@quartz-community/backlinks"
+    enabled: true
+    layout:
+      position: right
+      priority: 30
+  - source: "@quartz-community/breadcrumbs"
+    enabled: true
+    layout:
+      position: beforeBody
+      priority: 5
+      condition: not-index
+  - source: "@quartz-community/article-title"
+    enabled: true
+    layout:
+      position: beforeBody
+      priority: 10
+  - source: "@quartz-community/content-meta"
+    enabled: true
+    layout:
+      position: beforeBody
+      priority: 20
+  - source: "@quartz-community/tag-list"
+    enabled: true
+    layout:
+      position: beforeBody
+      priority: 30
+  - source: "@quartz-community/footer"
+    enabled: true
+    options:
+      links:
+        GitHub: https://github.com/migueldeoleiros
+        Blog: https://blog.migueldeoleiros.com
+    layout:
+      position: footer
+      priority: 50
+layout:
+  byPageType:
+    "404":
+      positions:
+        beforeBody: []
+        left: []
+        right: []
