@@ -8,6 +8,7 @@ import { Search } from "@quartz-community/search"
 import { Spacer } from "@quartz-community/spacer"
 import Flex from "./quartz/components/Flex"
 import MobileOnly from "./quartz/components/MobileOnly"
+import MonochromeEmoji from "./quartz/components/MonochromeEmoji"
 import { PageTypeDispatcher } from "./quartz/plugins/pageTypes/dispatcher"
 import { componentRegistry } from "./quartz/components/registry"
 import type { QuartzComponentConstructor } from "./quartz/components/types"
@@ -43,6 +44,13 @@ const listLayout = {
 }
 layout.byPageType.folder = listLayout
 layout.byPageType.tag = listLayout
+
+// Include the presentation normalizer on article, folder, and tag layouts.
+const monochromeEmoji = MonochromeEmoji()
+const afterBody = layout.defaults.afterBody ?? []
+for (const pageLayout of new Set([layout.defaults, ...Object.values(layout.byPageType)])) {
+  pageLayout.afterBody = [...(pageLayout.afterBody ?? afterBody), monochromeEmoji]
+}
 
 // The config loader constructs its own dispatcher before these overrides exist.
 // Replace it so the build uses this same layout, not the loader's earlier copy.
