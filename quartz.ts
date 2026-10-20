@@ -2,7 +2,6 @@ import { loadQuartzConfig, loadQuartzLayout } from "./quartz/plugins/loader/conf
 import { ArticleTitle } from "@quartz-community/article-title"
 import { Breadcrumbs } from "@quartz-community/breadcrumbs"
 import { ContentMeta } from "@quartz-community/content-meta"
-import { Darkmode } from "@quartz-community/darkmode"
 import { Explorer } from "@quartz-community/explorer"
 import { PageTitle } from "@quartz-community/page-title"
 import { Search } from "@quartz-community/search"
@@ -10,8 +9,21 @@ import { Spacer } from "@quartz-community/spacer"
 import Flex from "./quartz/components/Flex"
 import MobileOnly from "./quartz/components/MobileOnly"
 import { PageTypeDispatcher } from "./quartz/plugins/pageTypes/dispatcher"
+import { componentRegistry } from "./quartz/components/registry"
+import type { QuartzComponentConstructor } from "./quartz/components/types"
+// @ts-ignore -- Quartz bundles inline browser scripts as strings.
+import darkmodeScript from "./quartz/components/scripts/darkmode.inline"
 
 const config = await loadQuartzConfig()
+// Use the registered instance: the package root and /components exports bundle
+// separate copies. Importing the root too would ship two competing toggle scripts.
+const registeredDarkmode = componentRegistry.get("Darkmode")
+if (!registeredDarkmode) throw new Error("Darkmode component is not registered")
+const darkmode = componentRegistry.instantiate(
+  registeredDarkmode.component as QuartzComponentConstructor,
+)
+darkmode.beforeDOMLoaded = darkmodeScript
+
 export default config
 export const layout = await loadQuartzLayout()
 
@@ -23,7 +35,7 @@ const listLayout = {
     PageTitle(),
     MobileOnly(Spacer()),
     Flex({
-      components: [{ Component: Search(), grow: true }, { Component: Darkmode() }],
+      components: [{ Component: Search(), grow: true }, { Component: darkmode }],
     }),
     Explorer(),
   ],
