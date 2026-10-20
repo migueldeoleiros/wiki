@@ -1,76 +1,127 @@
-@use "./variables.scss" as *;
+// The same self-hosted type and paper/ink palette as miguel.md.
+@font-face {
+  font-family: Libron;
+  src: url("/static/fonts/libron/Libron-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
-// put your custom CSS here!
+@font-face {
+  font-family: Libron;
+  src: url("/static/fonts/libron/Libron-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Libron;
+  src: url("/static/fonts/libron/Libron-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+html {
+  color-scheme: light;
+
+  &[saved-theme="dark"] {
+    color-scheme: dark;
+  }
+}
+
+body {
+  font-family: Libron, Georgia, serif;
+  font-weight: 400;
+}
+
+// Libron has regular/bold faces, so Quartz's 600-weight links look fully bold.
+a {
+  font-weight: 400;
+}
+
+strong,
+b {
+  font-weight: 700;
+
+  a {
+    font-weight: inherit;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.page-title {
+  font-family: Libron, Georgia, serif;
+  font-weight: 400;
+}
 
 h1 {
-  position: relative;
-  padding-bottom: 0.5rem;
+  letter-spacing: -0.6px;
+  line-height: 1.2;
+}
 
-  &::after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 1px;
-    background-color: var(--lightgray);
-    margin-top: 0.5rem;
+article {
+  font-size: 1.125rem;
+  line-height: 1.65;
+
+  a:not(.tag-link) {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+
+    &.internal {
+      background: transparent;
+      padding: 0;
+    }
   }
 }
 
-h2 {
-  position: relative;
-  padding-bottom: 0.5rem;
+::selection {
+  background: var(--textHighlight);
+  color: var(--darkgray);
+}
 
-  &::after {
-    content: "";
-    display: block;
-    width: 80%;
-    height: 1px;
-    background-color: var(--lightgray);
-    margin-top: 0.5rem;
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+[tabindex="0"]:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 4px;
+}
+
+// Keep semantic colors, softened against the paper/ink palette.
+.callout[data-callout] {
+  --border: color-mix(in srgb, var(--color) 25%, var(--lightgray));
+  --bg: color-mix(in srgb, var(--color) 5%, var(--light));
+
+  .callout-title,
+  .callout-title-inner > p {
+    color: color-mix(in srgb, var(--color) 65%, var(--darkgray));
+  }
+
+  .callout-icon,
+  .fold-callout-icon {
+    background-color: color-mix(in srgb, var(--color) 65%, var(--darkgray));
+  }
+
+  .callout-title-inner {
+    font-weight: 400;
   }
 }
 
-h4 {
-  position: relative;
-  padding-left: 1rem;
-
-  &::before {
-    content: "●"; // You can change this to "→", "▶", or any symbol you like
-    font-size: 1rem;
-    color: var(--secondary);
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-  }
+// Retain syntax hues, with a little ink mixed in to reduce saturation.
+:root code[data-theme],
+:root code[data-theme] span {
+  color: color-mix(in srgb, var(--shiki-light) 70%, var(--darkgray));
 }
 
-h5 {
-  position: relative;
-  padding-left: 1.5rem;
-
-  &::before {
-    content: "○"; // You can change this to "→", "▶", or any symbol you like
-    font-size: 1rem;
-    color: var(--secondary);
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-}
-
-h6 {
-  position: relative;
-  padding-left: 2rem;
-
-  &::before {
-    content: "•"; // You can change this to "→", "▶", or any symbol you like
-    font-size: 1rem;
-    color: var(--secondary);
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-  }
+:root[saved-theme="dark"] code[data-theme],
+:root[saved-theme="dark"] code[data-theme] span {
+  color: color-mix(in srgb, var(--shiki-dark) 70%, var(--darkgray));
 }

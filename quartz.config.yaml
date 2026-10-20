@@ -16,33 +16,33 @@ configuration:
     - .obsidian
     - .org
   theme:
-    fontOrigin: googleFonts
-    cdnCaching: true
+    fontOrigin: local
+    cdnCaching: false
     typography:
-      header: Merriweather Sans
-      body: Source Sans Pro
-      code: JetBrains Mono
+      header: Libron
+      body: Libron
+      code: ui-monospace
     colors:
       lightMode:
-        light: "#D4DAE8"
-        lightgray: "#AFB4C0"
-        gray: "#404159"
-        darkgray: "#242532"
-        dark: "#13141B"
-        secondary: "#0F3D99"
-        tertiary: "#0F8499"
-        highlight: rgba(143, 159, 169, 0.15)
-        textHighlight: "#DDC16E88"
+        light: "#efeee8"
+        lightgray: "#d5d6cc"
+        gray: "#777a70"
+        darkgray: "#292b26"
+        dark: "#292b26"
+        secondary: "#292b26"
+        tertiary: "#62665a"
+        highlight: rgba(41, 43, 38, 0.06)
+        textHighlight: "#d5d6cc"
       darkMode:
-        light: "#090a11"
-        lightgray: "#242532"
-        gray: "#404159"
-        darkgray: "#AFB4C0"
-        dark: "#D4DAE8"
-        secondary: "#7BA3F4"
-        tertiary: "#51BACD"
-        highlight: rgba(143, 159, 169, 0.15)
-        textHighlight: "#DFAD1688"
+        light: "#151515"
+        lightgray: "#45483e"
+        gray: "#a0a397"
+        darkgray: "#e3e2d9"
+        dark: "#e3e2d9"
+        secondary: "#e3e2d9"
+        tertiary: "#bdc1b2"
+        highlight: rgba(227, 226, 217, 0.08)
+        textHighlight: "#45483e"
 plugins:
   - source: "@quartz-community/note-properties"
     enabled: true
@@ -105,7 +105,8 @@ plugins:
     enabled: true
     order: 90
   - source: "@quartz-community/quartz-fonts"
-    enabled: true
+    # Native theme + custom.scss provide local fonts; this plugin injects Google defaults.
+    enabled: false
   - source: "@quartz-community/remove-draft"
     enabled: true
   - source: "@quartz-community/alias-redirects"
